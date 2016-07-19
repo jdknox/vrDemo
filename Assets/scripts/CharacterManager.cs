@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class characterManager : MonoBehaviour {
+public class CharacterManager : MonoBehaviour {
 
   public float maxPlayerSpeed;
 

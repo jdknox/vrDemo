@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508f06d824425487eaf26d49acf665e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outsideText: 
 --- !u!114 &154946725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,12 +457,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerPivot: {fileID: 1741037406}
+  character: {fileID: 1616350216}
+  playerCamera: {fileID: 1295695035}
   messageCanvas: {fileID: 762972222}
   messageText: {fileID: 243068556}
   cubeInactiveMaterial: {fileID: 2100000, guid: f41f84dccc61345a5ba5ff17b041a52e,
     type: 2}
   cubeHoverMaterial: {fileID: 2100000, guid: 336c84c634d844dbb9e89e2375296e55, type: 2}
   cubeActiveMaterial: {fileID: 2100000, guid: c39eb20a45b03441480bbb03b76f0488, type: 2}
+  debugInfo: {fileID: 154946724}
+  deadZone: 0.2
 --- !u!1 &243068554
 GameObject:
   m_ObjectHideFlags: 0
