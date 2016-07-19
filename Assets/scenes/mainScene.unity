@@ -30,7 +30,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.19117647, g: 0.19117647, b: 0.19117647, a: 1}
   m_AmbientGroundColor: {r: 0.15992649, g: 0.18235295, b: 0.21323532, a: 1}
-  m_AmbientIntensity: 1.4
+  m_AmbientIntensity: 0.9
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 2100000, guid: 578ce743b111b6a4fab90106d01605d8, type: 2}
   m_HaloStrength: 0.5
@@ -44,7 +44,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.9075224, g: 1.0778198, b: 1.2684509, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 1
-  m_LightingDataAsset: {fileID: 112000001, guid: 4cd7024cc7e42e746a04ce21d4c38b30,
+  m_LightingDataAsset: {fileID: 112000001, guid: 4deed974a2c200b4bb185c92b1e17a0c,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -585,7 +585,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0.77
   m_ShadowRadius: 8
@@ -1898,6 +1898,7 @@ GameObject:
   - 124: {fileID: 1295695039}
   - 92: {fileID: 1295695038}
   - 81: {fileID: 1295695037}
+  - 45: {fileID: 1295695041}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1974,6 +1975,14 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!45 &1295695041
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295695035}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: a4d6ef0cb13c33d40b7258b4ebb2c112, type: 2}
 --- !u!1 &1310904503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,7 +2764,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1639361856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.23, y: 0, z: 7.61}
   m_LocalScale: {x: 4, y: 0.5, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
