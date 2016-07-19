@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 88bc414915d3b4f378b45f807a2dc0b2
+timeCreated: 1467155297
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - controllerPivot: {instanceID: 0}
+  - messageCanvas: {instanceID: 0}
+  - messageText: {instanceID: 0}
+  - cubeInactiveMaterial: {instanceID: 0}
+  - cubeHoverMaterial: {instanceID: 0}
+  - cubeActiveMaterial: {instanceID: 0}
+  - cubeActiveMaterial2: {fileID: 2100000, guid: c39eb20a45b03441480bbb03b76f0488,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/gvrUnityWin.iml" filepath="$PROJECT_DIR$/.idea/gvrUnityWin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gvr_android_common/gvr_android_common.iml" filepath="$PROJECT_DIR$/../gvr_android_common/gvr_android_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../unitygvractivity/unitygvractivity.iml" filepath="$PROJECT_DIR$/../unitygvractivity/unitygvractivity.iml" />
+    </modules>
+  </component>
+</project>

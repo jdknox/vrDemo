@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: 242f4bc8470b86346ad2e08a098b3df6
+timeCreated: 1468029739
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cube
+    100002: Cube_001
+    100004: //RootNode
+    100006: Cube_002
+    100008: towerDoor
+    100010: towerExterior
+    100012: towerInterior
+    100014: towerExterior_MeshPart0
+    100016: towerExterior_MeshPart1
+    100018: towerExterior_MeshPart10
+    100020: towerExterior_MeshPart11
+    100022: towerExterior_MeshPart12
+    100024: towerExterior_MeshPart13
+    100026: towerExterior_MeshPart14
+    100028: towerExterior_MeshPart15
+    100030: towerExterior_MeshPart16
+    100032: towerExterior_MeshPart2
+    100034: towerExterior_MeshPart3
+    100036: towerExterior_MeshPart4
+    100038: towerExterior_MeshPart5
+    100040: towerExterior_MeshPart6
+    100042: towerExterior_MeshPart7
+    100044: towerExterior_MeshPart8
+    100046: towerExterior_MeshPart9
+    400000: Cube
+    400002: Cube_001
+    400004: //RootNode
+    400006: Cube_002
+    400008: towerDoor
+    400010: towerExterior
+    400012: towerInterior
+    400014: towerExterior_MeshPart0
+    400016: towerExterior_MeshPart1
+    400018: towerExterior_MeshPart10
+    400020: towerExterior_MeshPart11
+    400022: towerExterior_MeshPart12
+    400024: towerExterior_MeshPart13
+    400026: towerExterior_MeshPart14
+    400028: towerExterior_MeshPart15
+    400030: towerExterior_MeshPart16
+    400032: towerExterior_MeshPart2
+    400034: towerExterior_MeshPart3
+    400036: towerExterior_MeshPart4
+    400038: towerExterior_MeshPart5
+    400040: towerExterior_MeshPart6
+    400042: towerExterior_MeshPart7
+    400044: towerExterior_MeshPart8
+    400046: towerExterior_MeshPart9
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Cube_002
+    2300006: towerDoor
+    2300008: towerExterior
+    2300010: towerInterior
+    2300012: towerExterior_MeshPart0
+    2300014: towerExterior_MeshPart1
+    2300016: towerExterior_MeshPart10
+    2300018: towerExterior_MeshPart11
+    2300020: towerExterior_MeshPart12
+    2300022: towerExterior_MeshPart13
+    2300024: towerExterior_MeshPart14
+    2300026: towerExterior_MeshPart15
+    2300028: towerExterior_MeshPart16
+    2300030: towerExterior_MeshPart2
+    2300032: towerExterior_MeshPart3
+    2300034: towerExterior_MeshPart4
+    2300036: towerExterior_MeshPart5
+    2300038: towerExterior_MeshPart6
+    2300040: towerExterior_MeshPart7
+    2300042: towerExterior_MeshPart8
+    2300044: towerExterior_MeshPart9
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Cube_002
+    3300006: towerDoor
+    3300008: towerExterior
+    3300010: towerInterior
+    3300012: towerExterior_MeshPart0
+    3300014: towerExterior_MeshPart1
+    3300016: towerExterior_MeshPart10
+    3300018: towerExterior_MeshPart11
+    3300020: towerExterior_MeshPart12
+    3300022: towerExterior_MeshPart13
+    3300024: towerExterior_MeshPart14
+    3300026: towerExterior_MeshPart15
+    3300028: towerExterior_MeshPart16
+    3300030: towerExterior_MeshPart2
+    3300032: towerExterior_MeshPart3
+    3300034: towerExterior_MeshPart4
+    3300036: towerExterior_MeshPart5
+    3300038: towerExterior_MeshPart6
+    3300040: towerExterior_MeshPart7
+    3300042: towerExterior_MeshPart8
+    3300044: towerExterior_MeshPart9
+    4300000: Cube
+    4300002: Cube_001
+    4300004: Cube_002
+    4300006: towerInterior
+    4300008: towerExterior
+    4300010: towerDoor
+    4300012: towerExterior_MeshPart0
+    4300014: towerExterior_MeshPart1
+    4300016: towerExterior_MeshPart2
+    4300018: towerExterior_MeshPart3
+    4300020: towerExterior_MeshPart4
+    4300022: towerExterior_MeshPart5
+    4300024: towerExterior_MeshPart6
+    4300026: towerExterior_MeshPart7
+    4300028: towerExterior_MeshPart8
+    4300030: towerExterior_MeshPart9
+    4300032: towerExterior_MeshPart10
+    4300034: towerExterior_MeshPart11
+    4300036: towerExterior_MeshPart12
+    4300038: towerExterior_MeshPart13
+    4300040: towerExterior_MeshPart14
+    4300042: towerExterior_MeshPart15
+    4300044: towerExterior_MeshPart16
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 1
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
