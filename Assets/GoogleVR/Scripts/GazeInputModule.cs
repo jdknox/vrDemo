@@ -117,10 +117,12 @@ public class GazeInputModule : BaseInputModule {
     } else if (Time.unscaledTime - pointerData.clickTime < clickTime) {
       // Delay new events until clickTime has passed.
     } else if (!pointerData.eligibleForClick &&
-               (GvrViewer.Instance.Triggered || Input.GetMouseButtonDown(0))) {
+               (GvrViewer.Instance.Triggered || Input.GetMouseButtonDown(0) ||
+                GvrController.ClickButtonDown)) {
       // New trigger action.
       HandleTrigger();
-    } else if (!GvrViewer.Instance.Triggered && !Input.GetMouseButton(0)) {
+    } else if (!GvrViewer.Instance.Triggered && !Input.GetMouseButton(0) &&
+               !GvrController.ClickButton) {
       // Check if there is a pending click to handle.
       HandlePendingClick();
     }
