@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - interactable
+  - playerHand
   layers:
   - Default
   - TransparentFX

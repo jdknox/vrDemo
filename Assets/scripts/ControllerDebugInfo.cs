@@ -57,26 +57,26 @@ public class ControllerDebugInfo : MonoBehaviour {
 
     text.text += string.Format("normalized position: {0}\n", outsideText);
 
-    if (GvrController.TouchDown) {
-      Debug.Log("CONTROLLER EVENT: Touch down");
-    }
-    if (GvrController.TouchUp) {
-      Debug.Log("CONTROLLER EVENT: Touch up");
-    }
-    if (GvrController.ClickButtonDown) {
-      Debug.Log("CONTROLLER EVENT: CLICK button down");
-    }
-    if (GvrController.ClickButtonUp) {
-      Debug.Log("CONTROLLER EVENT: CLICK button up");
-    }
-    if (GvrController.AppButtonDown) {
-      Debug.Log("CONTROLLER EVENT: APP button down");
-    }
-    if (GvrController.AppButtonUp) {
-      Debug.Log("CONTROLLER EVENT: APP button up");
-    }
-    if (GvrController.Recentered) {
-      Debug.Log("CONTROLLER EVENT: Recentered.");
-    }
+    //if (GvrController.TouchDown) {
+    //  Debug.Log("CONTROLLER EVENT: Touch down");
+    //}
+    //if (GvrController.TouchUp) {
+    //  Debug.Log("CONTROLLER EVENT: Touch up");
+    //}
+    //if (GvrController.ClickButtonDown) {
+    //  Debug.Log("CONTROLLER EVENT: CLICK button down");
+    //}
+    //if (GvrController.ClickButtonUp) {
+    //  Debug.Log("CONTROLLER EVENT: CLICK button up");
+    //}
+    //if (GvrController.AppButtonDown) {
+    //  Debug.Log("CONTROLLER EVENT: APP button down");
+    //}
+    //if (GvrController.AppButtonUp) {
+    //  Debug.Log("CONTROLLER EVENT: APP button up");
+    //}
+    //if (GvrController.Recentered) {
+    //  Debug.Log("CONTROLLER EVENT: Recentered.");
+    //}
   }
 }

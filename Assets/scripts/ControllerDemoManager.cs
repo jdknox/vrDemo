@@ -59,7 +59,7 @@ public class ControllerDemoManager : MonoBehaviour
     {
         UpdatePointer();
         UpdateStatusMessage();
-        UpdateCharacterPosition();
+        //UpdateCharacterPosition();
         updateDoor();
     }
 
@@ -78,7 +78,7 @@ public class ControllerDemoManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        //UpdateCharacterPosition();
+        UpdateCharacterPosition();
     }
 
     private void UpdateCharacterPosition()

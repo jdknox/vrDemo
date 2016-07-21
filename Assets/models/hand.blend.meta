@@ -56,6 +56,11 @@ ModelImporter:
     4300000: hand
     7400000: Default Take
     7400002: PoseLib
+    7400004: poke
+    7400006: poke0
+    7400008: index
+    7400010: grab
+    7400012: open
     9500000: //RootNode
     13700000: hand
   materials:
@@ -65,9 +70,9 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleCurves: 0
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: Armature/Bone
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -80,8 +85,8 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
+      name: poke
+      takeName: poke
       firstFrame: 0
       lastFrame: 9
       wrapMode: 0
@@ -156,10 +161,86 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: PoseLib
-      takeName: PoseLib
+      name: index
+      takeName: index
       firstFrame: 0
-      lastFrame: 4
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_015
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_015/Bone_016
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003/Bone_007
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003/Bone_007/Bone_011
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003/Bone_007/Bone_011/Bone_017
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004/Bone_008
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004/Bone_008/Bone_012
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004/Bone_008/Bone_012/Bone_018
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005/Bone_009
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005/Bone_009/Bone_013
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005/Bone_009/Bone_013/Bone_019
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006/Bone_010
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006/Bone_010/Bone_014
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006/Bone_010/Bone_014/Bone_020
+        weight: 1
+      - path: hand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: grab
+      takeName: grab
+      firstFrame: 0
+      lastFrame: 9
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -178,6 +259,99 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_015
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_015/Bone_016
+        weight: 1
+      - path: Armature/Bone/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003/Bone_007
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003/Bone_007/Bone_011
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_003/Bone_007/Bone_011/Bone_017
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004/Bone_008
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004/Bone_008/Bone_012
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_004/Bone_008/Bone_012/Bone_018
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005/Bone_009
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005/Bone_009/Bone_013
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_005/Bone_009/Bone_013/Bone_019
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006/Bone_010
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006/Bone_010/Bone_014
+        weight: 1
+      - path: Armature/Bone/Bone_002/Bone_006/Bone_010/Bone_014/Bone_020
+        weight: 1
+      - path: hand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: open
+      takeName: open
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves:
+      - name: Curve
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 0
       events: []
       transformMask:
       - path: 
@@ -265,7 +439,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: Armature
+    rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
