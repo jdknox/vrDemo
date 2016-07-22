@@ -29,6 +29,9 @@ ModelImporter:
     100042: towerExterior_MeshPart7
     100044: towerExterior_MeshPart8
     100046: towerExterior_MeshPart9
+    100048: Empty
+    100050: lowForBake
+    100052: lowForBake_001
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -53,6 +56,9 @@ ModelImporter:
     400042: towerExterior_MeshPart7
     400044: towerExterior_MeshPart8
     400046: towerExterior_MeshPart9
+    400048: Empty
+    400050: lowForBake
+    400052: lowForBake_001
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -76,6 +82,8 @@ ModelImporter:
     2300040: towerExterior_MeshPart7
     2300042: towerExterior_MeshPart8
     2300044: towerExterior_MeshPart9
+    2300046: lowForBake
+    2300048: lowForBake_001
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -99,6 +107,8 @@ ModelImporter:
     3300040: towerExterior_MeshPart7
     3300042: towerExterior_MeshPart8
     3300044: towerExterior_MeshPart9
+    3300046: lowForBake
+    3300048: lowForBake_001
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -122,6 +132,8 @@ ModelImporter:
     4300040: towerExterior_MeshPart14
     4300042: towerExterior_MeshPart15
     4300044: towerExterior_MeshPart16
+    4300046: lowForBake_001
+    4300048: lowForBake
     7400000: Default Take
     9500000: //RootNode
   materials:

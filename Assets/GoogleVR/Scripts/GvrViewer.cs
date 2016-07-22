@@ -389,8 +389,10 @@ public class GvrViewer : MonoBehaviour {
       return;
     }
 #if UNITY_IOS
-    Application.targetFrameRate = 60;
+    Application.targetFrameRate = 90;
 #endif
+    QualitySettings.vSyncCount = 0;
+    Application.targetFrameRate = 90;
     // Prevent the screen from dimming / sleeping
     Screen.sleepTimeout = SleepTimeout.NeverSleep;
     InitDevice();

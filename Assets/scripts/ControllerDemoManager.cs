@@ -116,18 +116,21 @@ public class ControllerDemoManager : MonoBehaviour
             character.transform.position += playerCamera.transform.forward * moveVector.y;
             character.transform.position = new Vector3(character.transform.position.x, oldY, character.transform.position.z);
         }
-    }
 
-    private void UpdatePointer()
+    }
+    
+private void UpdatePointer()
     {
 
         //Vector3 forward = playerCamera.transform.TransformDirection(Vector3.forward) * 10;
 
+        /*
         if (GvrController.State != GvrConnectionState.Connected)
         {
             controllerPivot.SetActive(false);
         }
         controllerPivot.SetActive(true);
+        */
         controllerPivot.transform.rotation = GvrController.Orientation;
 
         if (dragging)
