@@ -49,9 +49,9 @@ public class FPS : MonoBehaviour {
 
     text += " / ";
 
-    //float interp = Time.deltaTime / (0.5f + Time.deltaTime);
+    float interp = Time.deltaTime / (0.5f + Time.deltaTime);
     float currentFPS = 1.0f / Time.deltaTime;
-    fps = Mathf.Lerp(fps, currentFPS, 0.5f); // 0.5f was interp
+    fps = Mathf.Lerp(fps, currentFPS, interp); // 0.5f was interp
     text += Mathf.RoundToInt(fps) + "fps";   // was (fps)
     textField.text = text;
   }

@@ -144,7 +144,7 @@ private void UpdatePointer()
         {  // nothing picked up yet
             RaycastHit hitInfo;
             Vector3 rayDirection = GvrController.Orientation * Vector3.forward;
-            Debug.DrawRay(playerCamera.transform.position, rayDirection * 50f, Color.green, 0f);
+            //Debug.DrawRay(playerCamera.transform.position, rayDirection * 50f, Color.green, 0f);
 
             if (Physics.Raycast(playerCamera.transform.position, rayDirection, out hitInfo))
             {
