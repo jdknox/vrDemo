@@ -33,4 +33,6 @@ Thumbs.db
 
 # custom #
 build/
+archive/
+/images/
 Lightmap-*.exr*
