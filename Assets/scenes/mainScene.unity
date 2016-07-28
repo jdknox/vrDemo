@@ -56,7 +56,7 @@ LightmapSettings:
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
-    m_IndirectOutputScale: 0.5
+    m_IndirectOutputScale: 0.7
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 1
@@ -66,11 +66,11 @@ LightmapSettings:
     serializedVersion: 4
     m_Resolution: 2
     m_BakeResolution: 128
-    m_TextureWidth: 4096
+    m_TextureWidth: 2048
     m_TextureHeight: 1024
     m_AO: 1
     m_AOMaxDistance: 1
-    m_CompAOExponent: 2
+    m_CompAOExponent: 1.5
     m_CompAOExponentDirect: 0
     m_Padding: 4
     m_LightmapParameters: {fileID: 15200, guid: 0000000000000000f000000000000000,
@@ -80,7 +80,7 @@ LightmapSettings:
     m_DirectLightInLightProbes: 0
     m_FinalGather: 1
     m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 2048
+    m_FinalGatherRayCount: 512
     m_ReflectionCompression: 1
   m_LightingDataAsset: {fileID: 112000001, guid: 4deed974a2c200b4bb185c92b1e17a0c,
     type: 2}
@@ -1177,10 +1177,8 @@ GameObject:
   - 4: {fileID: 632657699}
   - 33: {fileID: 632657705}
   - 23: {fileID: 632657704}
-  - 54: {fileID: 632657703}
-  - 65: {fileID: 632657702}
-  - 65: {fileID: 632657701}
   - 114: {fileID: 632657700}
+  - 65: {fileID: 632657701}
   m_Layer: 0
   m_Name: towerDoorShadow
   m_TagString: Untagged
@@ -1195,8 +1193,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 632657698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.57, y: -0.06, z: -0}
-  m_LocalScale: {x: 1.0000012, y: 1.0000007, z: 1.0000007}
+  m_LocalPosition: {x: -0.57, y: 0.04, z: 0.05}
+  m_LocalScale: {x: 0.9, y: 0.1, z: 0.97}
   m_Children: []
   m_Father: {fileID: 743616638}
   m_RootOrder: 1
@@ -1219,38 +1217,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 632657698}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1011, y: 0.48322618, z: 2.4563015}
-  m_Center: {x: 0.00010019541, y: -0.13571161, z: 1.2334144}
---- !u!65 &632657702
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632657698}
-  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.1011, y: 0.048400033, z: 2.4563012}
-  m_Center: {x: -0.000000002433143, y: 0.08224548, z: 1.2334406}
---- !u!54 &632657703
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632657698}
-  serializedVersion: 2
-  m_Mass: 80
-  m_Drag: 0
-  m_AngularDrag: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Size: {x: 1.1011, y: 0.076866, z: 2.456301}
+  m_Center: {x: 1.7948922e-11, y: 0.06801295, z: 1.2334405}
 --- !u!23 &632657704
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1265,7 +1236,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: da028fbd8718a074b920bb428171f305, type: 2}
+  - {fileID: 2100000, guid: 77ee7e42d01249840aa19900268790c9, type: 2}
+  - {fileID: 2100000, guid: 77ee7e42d01249840aa19900268790c9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -2483,7 +2455,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: b4e966fed21dad842bb788fc570846c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: b4e966fed21dad842bb788fc570846c3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2511,15 +2483,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: b4e966fed21dad842bb788fc570846c3, type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.05
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: b4e966fed21dad842bb788fc570846c3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: b4e966fed21dad842bb788fc570846c3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: b4e966fed21dad842bb788fc570846c3, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -2671,8 +2643,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 32
-  m_SplatMapDistance: 30
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 80
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -2685,7 +2657,7 @@ Terrain:
   m_LegacyShininess: 0.078125
   m_MaterialTemplate: {fileID: 0}
   m_BakeLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.5
+  m_ScaleInLightmap: 1
   m_LightmapParameters: {fileID: 0}
 --- !u!4 &1444665280
 Transform:
