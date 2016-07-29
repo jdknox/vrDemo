@@ -103,7 +103,7 @@ public class StereoController : MonoBehaviour {
   /// non-VR mode.
   [Tooltip("How much to adjust the stereo field of view to match this camera.")]
   [Range(0,1)]
-  public float matchMonoFOV = 0;
+  public float matchMonoFOV = 1.0f;
 
   /// Determines the method by which the stereo cameras' FOVs are matched to the mono
   /// camera's FOV (assuming #matchMonoFOV is not 0).  The default is to move the stereo
@@ -120,7 +120,7 @@ public class StereoController : MonoBehaviour {
   /// be non-null, or there will be no effect.
   [Tooltip("Whether to adjust FOV by moving the eyes (0) or simply zooming (1).")]
   [Range(0,1)]
-  public float matchByZoom = 0;
+  public float matchByZoom = 1.0f;
 
   /// Matching the mono camera's field of view in stereo by moving the eyes requires
   /// a designated "center of interest".  This is either a point in space (an empty
