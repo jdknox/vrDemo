@@ -35,4 +35,5 @@ Thumbs.db
 build/
 archive/
 /images/
+Assets/audio/*_data
 Lightmap-*.exr*
