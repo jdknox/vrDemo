@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: cameraSkybox
+  m_Name: testCameraSkybox
   m_Shader: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
@@ -102,7 +102,7 @@ Material:
     - first:
         name: _Tex
       second:
-        m_Texture: {fileID: 8900000, guid: 6e39a72555ad1f841b1c6404cdb3391a, type: 3}
+        m_Texture: {fileID: 8900000, guid: 0ba0986cdd9fdf74ca6e14cf5e1c2386, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -126,7 +126,7 @@ Material:
       second: 0
     - first:
         name: _Exposure
-      second: 0.86
+      second: 2.5
     - first:
         name: _GlossMapScale
       second: 1
@@ -175,4 +175,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Tint
-      second: {r: 0.50735295, g: 0.50735295, b: 0.50735295, a: 0}
+      second: {r: 0.24930196, g: 0.2962014, b: 0.36078432, a: 0}
