@@ -848,7 +848,20 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2300000, guid: 4b32349c16f68bb428f36c21d29852a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c7e847aa2ba201478c35bbdf9deeb50, type: 2}
+    - target: {fileID: 100000, guid: 4b32349c16f68bb428f36c21d29852a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 4b32349c16f68bb428f36c21d29852a1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 4b32349c16f68bb428f36c21d29852a1, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 4b32349c16f68bb428f36c21d29852a1, type: 3}
   m_IsPrefabParent: 0
 --- !u!1 &342420574 stripped
