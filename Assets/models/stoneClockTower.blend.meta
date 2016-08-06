@@ -32,6 +32,12 @@ ModelImporter:
     100048: Empty
     100050: lowForBake
     100052: lowForBake_001
+    100054: ceiling
+    100056: gearMinute
+    100058: gearPivot
+    100060: gearMinute_001
+    100062: gearMinute_002
+    100064: Circle
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -59,6 +65,12 @@ ModelImporter:
     400048: Empty
     400050: lowForBake
     400052: lowForBake_001
+    400054: ceiling
+    400056: gearMinute
+    400058: gearPivot
+    400060: gearMinute_001
+    400062: gearMinute_002
+    400064: Circle
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -84,6 +96,11 @@ ModelImporter:
     2300044: towerExterior_MeshPart9
     2300046: lowForBake
     2300048: lowForBake_001
+    2300050: ceiling
+    2300052: gearMinute
+    2300054: gearMinute_001
+    2300056: gearMinute_002
+    2300058: Circle
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -109,6 +126,11 @@ ModelImporter:
     3300044: towerExterior_MeshPart9
     3300046: lowForBake
     3300048: lowForBake_001
+    3300050: ceiling
+    3300052: gearMinute
+    3300054: gearMinute_001
+    3300056: gearMinute_002
+    3300058: Circle
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -134,6 +156,11 @@ ModelImporter:
     4300044: towerExterior_MeshPart16
     4300046: lowForBake_001
     4300048: lowForBake
+    4300050: ceiling
+    4300052: gearMinute
+    4300054: gearMinute_001
+    4300056: gearMinute_002
+    4300058: Circle
     7400000: Default Take
     9500000: //RootNode
   materials:

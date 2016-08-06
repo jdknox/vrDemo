@@ -16,8 +16,8 @@ TagManager:
   - 
   - 
   - dynamicShadows
-  - specular
-  - 
+  - specularDay
+  - specularTower
   - 
   - 
   - 
