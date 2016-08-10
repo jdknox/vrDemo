@@ -3,7 +3,7 @@
 // - no lighting
 // - no per-material color
 
-Shader "Mobile/Unlit (Supports Lightmap)" {
+Shader "Mobile/Unlit ZTest (always on top)" {
 Properties {
 	_MainTex ("Base (RGB)", 2D) = "white" {}
 }
@@ -27,6 +27,7 @@ SubShader {
 		Tags { "LightMode" = "VertexLM" }
 
 		Lighting Off
+	    ZTest Greater
 		BindChannels {
 			Bind "Vertex", vertex
 			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
