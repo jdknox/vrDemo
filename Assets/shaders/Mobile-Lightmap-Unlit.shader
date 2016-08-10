@@ -9,61 +9,25 @@ Properties {
 }
 
 SubShader {
-	Tags { "RenderType"="Opaque" }
+	Tags {
+			"RenderType"="Opaque"
+			"Queue" = "Overlay" 
+		 }
 	LOD 100
 	
 	// Non-lightmapped
 	Pass {
 		Tags { "LightMode" = "Vertex" }
 		Lighting Off
+		ZTest Always
+		ZWrite On
 		SetTexture [_MainTex] {
-			constantColor (1,1,1,1)
-			combine texture, constant // UNITY_OPAQUE_ALPHA_FFP
+			constantColor (0,0,0,1)
+			//combine texture, constant // UNITY_OPAQUE_ALPHA_FFP
 		}  
 	}
 	
-	// Lightmapped, encoded as dLDR
-	Pass {
-		Tags { "LightMode" = "VertexLM" }
-
-		Lighting Off
-	    ZTest Greater
-		BindChannels {
-			Bind "Vertex", vertex
-			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
-			Bind "texcoord", texcoord1 // main uses 1st uv
-		}
-		
-		SetTexture [unity_Lightmap] {
-			matrix [unity_LightmapMatrix]
-			combine texture
-		}
-		SetTexture [_MainTex] {
-			constantColor (1,1,1,1)
-			combine texture * previous DOUBLE, constant // UNITY_OPAQUE_ALPHA_FFP
-		}
-	}
 	
-	// Lightmapped, encoded as RGBM
-	Pass {
-		Tags { "LightMode" = "VertexLMRGBM" }
-		
-		Lighting Off
-		BindChannels {
-			Bind "Vertex", vertex
-			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
-			Bind "texcoord", texcoord1 // main uses 1st uv
-		}
-		
-		SetTexture [unity_Lightmap] {
-			matrix [unity_LightmapMatrix]
-			combine texture * texture alpha DOUBLE
-		}
-		SetTexture [_MainTex] {
-			constantColor (1,1,1,1)
-			combine texture * previous QUAD, constant // UNITY_OPAQUE_ALPHA_FFP
-		}
-	}	
 	
 
 }
