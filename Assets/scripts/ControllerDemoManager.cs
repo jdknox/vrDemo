@@ -40,11 +40,14 @@ public class ControllerDemoManager : MonoBehaviour
 
     // True if we are dragging the currently selected GameObject.
     private bool dragging;
+    private Quaternion objectStartRotation;
+    private Quaternion elbowStartRotation;
+    private GameObject playerCollider;
 
     void Awake()
     {
         towerDoor = GameObject.Find("towerDoorPivot");
-        
+        playerCollider = GameObject.Find("playerCollider");
         character.SetActive(true);
     }
 
@@ -57,10 +60,14 @@ public class ControllerDemoManager : MonoBehaviour
 
     void Update()
     {
+        //controllerPivot.transform.Rotate(Vector3.up, 39f);
+
         UpdatePointer();
         UpdateStatusMessage();
         //UpdateCharacterPosition();
-        updateDoor();
+        //updateDoor();
+        playerCollider.GetComponent<BoxCollider>().transform.rotation = Quaternion.Euler(0f, 120f * playerCamera.transform.rotation.y, 0f);
+        Debug.Log(playerCollider.GetComponent<BoxCollider>().transform.rotation.y);//.localRotation = playerCamera.transform.rotation;
     }
 
     private void updateDoor()
@@ -131,35 +138,49 @@ private void UpdatePointer()
         }
         controllerPivot.SetActive(true);
         */
-        controllerPivot.transform.rotation = GvrController.Orientation;
+        controllerPivot.transform.rotation = character.transform.rotation * GvrController.Orientation;// * character.transform.rotation;
+        Debug.DrawRay(controllerPivot.transform.position, Vector3.forward, Color.white, 0.1f, true);
+        Debug.DrawRay(controllerPivot.transform.position, controllerPivot.transform.rotation * Vector3.forward, Color.green);
 
         if (dragging)
         {
-            if (GvrController.TouchUp)
+            if (GvrController.AppButtonUp)
             {
                 EndDragging();
             }
+            //Quaternion objectCurrentRotation = selectedObject.transform.rotation;
+            //Quaternion elbowDeltaRotation = GvrController.Orientation * Quaternion.Inverse(elbowStartRotation);
+            float elbowAngle = -Quaternion.Angle((elbowStartRotation), controllerPivot.transform.rotation);
+            float objectAngle = Quaternion.Angle(objectStartRotation, selectedObject.transform.rotation);
+            debugInfo.outsideText = "\nelbow angle: " + elbowAngle.ToString();
+            selectedObject.transform.Rotate(Vector3.forward, (elbowAngle - objectAngle) * Time.deltaTime);
+            //Quaternion.Slerp()
+            //Debug.DrawRay(controllerPivot.transform.position, elbowDeltaRotation.eulerAngles);
+            Debug.DrawRay(controllerPivot.transform.position, elbowStartRotation * Vector3.forward, Color.red);
+            //selectedObject.transform.rotation = controllerPivot.transform.rotation;
+
         }
         else
         {  // nothing picked up yet
             RaycastHit hitInfo;
-            Vector3 rayDirection = GvrController.Orientation * Vector3.forward;
+            Vector3 rayDirection = controllerPivot.transform.rotation * Vector3.forward;
             //Debug.DrawRay(playerCamera.transform.position, rayDirection * 50f, Color.green, 0f);
 
             if (Physics.Raycast(playerCamera.transform.position, rayDirection, out hitInfo))
             {
                 if (hitInfo.collider && hitInfo.collider.gameObject && hitInfo.collider.gameObject.tag == "interactable")
                 {
-                    SetSelectedObject(hitInfo.collider.gameObject);
+                    //SetSelectedObject(hitInfo.collider.gameObject);
                 }
             }
             else
             {
                 SetSelectedObject(null);
             }
-            if (GvrController.ClickButtonDown && selectedObject != null)
+
+            if (GvrController.AppButtonDown && selectedObject != null)
             {
-                StartDragging();
+                //StartDragging();
             }
         }
     }
@@ -168,32 +189,35 @@ private void UpdatePointer()
     {
         if (selectedObject != null)
         {
-            selectedObject.GetComponent<Renderer>().material = cubeInactiveMaterial;
+            //selectedObject.GetComponent<Renderer>().material = cubeInactiveMaterial;
         }
         if (obj != null)
         {
-            obj.GetComponent<Renderer>().material = cubeActiveMaterial;
+            //obj.GetComponent<Renderer>().material = cubeActiveMaterial;
         }
         selectedObject = obj;
+        Debug.Log("RAY_COLLISION: " + obj.ToString());
     }
 
     private void StartDragging()
     {
         dragging = true;
-        selectedObject.GetComponent<Renderer>().material = cubeHoverMaterial;
+        //selectedObject.GetComponent<Renderer>().material = cubeHoverMaterial;
 
         // Reparent the active cube so it's part of the ControllerPivot object. That will
         // make it move with the controller.
-        selectedObject.transform.SetParent(controllerPivot.transform, true);
+        //selectedObject.transform.SetParent(controllerPivot.transform, true);
+        objectStartRotation = selectedObject.transform.rotation;
+        elbowStartRotation = controllerPivot.transform.rotation;
     }
 
     private void EndDragging()
     {
         dragging = false;
-        selectedObject.GetComponent<Renderer>().material = cubeActiveMaterial;
+        //selectedObject.GetComponent<Renderer>().material = cubeActiveMaterial;
 
         // Stop dragging the cube along.
-        selectedObject.transform.SetParent(null, true);
+        //selectedObject.transform.SetParent(null, true);
     }
 
     private void UpdateStatusMessage()

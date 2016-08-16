@@ -40,6 +40,7 @@ ModelImporter:
     100064: Circle
     100066: Plane
     100068: woodDesk
+    100070: gearHour
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -75,6 +76,7 @@ ModelImporter:
     400064: Circle
     400066: Plane
     400068: woodDesk
+    400070: gearHour
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -107,6 +109,7 @@ ModelImporter:
     2300058: Circle
     2300060: Plane
     2300062: woodDesk
+    2300064: gearHour
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -139,6 +142,7 @@ ModelImporter:
     3300058: Circle
     3300060: Plane
     3300062: woodDesk
+    3300064: gearHour
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -171,6 +175,7 @@ ModelImporter:
     4300058: Circle
     4300060: Plane
     4300062: woodDesk
+    4300064: gearHour
     7400000: Default Take
     9500000: //RootNode
   materials:
