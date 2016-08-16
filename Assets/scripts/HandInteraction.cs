@@ -58,8 +58,8 @@ public class HandInteraction : MonoBehaviour {
     void Update () {
         float handVerticalOrientation = 2.0f - Mathf.Abs(2.0f - playerHand.transform.rotation.eulerAngles.x / 90f);
         playerHand.transform.localPosition = initialHandOffset + handOffset * handVerticalOrientation;
-        debugInfo.outsideText = "hand length: " + playerHand.transform.localPosition.z;
-        debugInfo.outsideText += "hand rotation: " + handVerticalOrientation;
+        //debugInfo.outsideText = "hand length: " + playerHand.transform.localPosition.z;
+        //debugInfo.outsideText += "hand rotation: " + handVerticalOrientation;
 
         if (canInteract)
         {
