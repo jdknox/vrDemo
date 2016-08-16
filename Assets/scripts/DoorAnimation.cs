@@ -44,14 +44,14 @@ public class DoorAnimation : MonoBehaviour
     {
 	    if ( canInteract )
         {
-            var poking = GvrController.ClickButton;
+            var poking = GvrController.ClickButtonDown || GvrController.AppButtonDown;
             if ( poking )
             {
                 handAnimator.SetBool("poking", true);
                 doorBody.isKinematic = false;
                 //Debug.Log("open door");
             }
-            else if ( GvrController.ClickButtonUp )
+            else if ( GvrController.ClickButtonUp || GvrController.AppButtonUp )
             {
                 handAnimator.SetTrigger("interactable");
                 handAnimator.SetBool("poking", false);
