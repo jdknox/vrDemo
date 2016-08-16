@@ -26,7 +26,7 @@ public class DoorAnimation : MonoBehaviour
         {
             handAnimator.SetTrigger("interactable");
             canInteract = true;
-            Debug.Log("player hand near door");
+            //Debug.Log("player hand near door");
         }
     }
     void OnTriggerExit(Collider other)
