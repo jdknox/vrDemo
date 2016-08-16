@@ -66,8 +66,8 @@ public class ControllerDemoManager : MonoBehaviour
         UpdateStatusMessage();
         //UpdateCharacterPosition();
         //updateDoor();
-        playerCollider.GetComponent<BoxCollider>().transform.rotation = Quaternion.Euler(0f, 120f * playerCamera.transform.rotation.y, 0f);
-        Debug.Log(playerCollider.GetComponent<BoxCollider>().transform.rotation.y);//.localRotation = playerCamera.transform.rotation;
+        playerCollider.GetComponent<BoxCollider>().transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
+        //debugInfo.outsideText = "camera y rotation: " + (playerCamera.transform.rotation.eulerAngles) + ": " + playerCamera.transform.rotation.y;//.localRotation = playerCamera.transform.rotation;
     }
 
     private void updateDoor()
@@ -99,7 +99,7 @@ public class ControllerDemoManager : MonoBehaviour
             float fudgeFactor = 1.43f;  // daydream controller doesn't go all the way to 1.0 with the printed cover
 
             var moveVector = 2 * GvrController.TouchPos - Vector2.one;
-            moveVector.y = Mathf.Clamp(-moveVector.y, -0.5f, 1.0f);
+            moveVector.y = Mathf.Clamp(-moveVector.y, -0.81f, 1.0f);
             var magnitude = moveVector.magnitude;
 
             if (magnitude < deadZone)
@@ -107,13 +107,10 @@ public class ControllerDemoManager : MonoBehaviour
 
 
             var direction = moveVector.normalized;
-            //debugInfo.outsideText = "pre input: " + moveVector.ToString() + "\n";
-
+            
             // clean up input values, avoid the dead zone, and normalize -1 to +1
-
-            ;
-            magnitude = (magnitude - deadZone) / (1.0f - deadZone);
-            //magnitude = Mathf.Clamp(magnitude, 0.0f, cm.maxPlayerSpeed);
+            magnitude = magnitude * magnitude * (magnitude - deadZone) / (1.0f - deadZone); // use cubic function to achieve more precision at slow speeds
+            
             moveVector = direction * magnitude * Time.deltaTime * characterManager.maxPlayerSpeed * fudgeFactor;
             //debugInfo.outsideText += "final move vec: " + moveVector.ToString() + "\n";
             //debugInfo.outsideText += "final move speed: " + moveVector.magnitude.ToString() + "\n";
