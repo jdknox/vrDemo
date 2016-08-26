@@ -4,7 +4,7 @@ using System.Collections;
 public class DoorAnimation : MonoBehaviour
 {
     private Animator handAnimator;
-    private GameObject player;
+    //private GameObject player;
     private GameObject playerHand;
 
     private bool canInteract = false;
@@ -13,7 +13,7 @@ public class DoorAnimation : MonoBehaviour
     // Use this for initialization
     void Awake ()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         playerHand = GameObject.FindGameObjectWithTag("playerHand");
         handAnimator = playerHand.GetComponent<Animator>();
         doorBody = GetComponent<Rigidbody>();

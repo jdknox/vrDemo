@@ -49,6 +49,7 @@ public class ControllerDemoManager : MonoBehaviour
         towerDoor = GameObject.Find("towerDoorPivot");
         playerCollider = GameObject.Find("playerCollider");
         character.SetActive(true);
+        GameObject.Find("towerInterior").SetActive(false);
     }
 
     void Start()
@@ -136,9 +137,10 @@ private void UpdatePointer()
         controllerPivot.SetActive(true);
         */
         controllerPivot.transform.rotation = character.transform.rotation * GvrController.Orientation;// * character.transform.rotation;
-        Debug.DrawRay(controllerPivot.transform.position, Vector3.forward, Color.white, 0.1f, true);
-        Debug.DrawRay(controllerPivot.transform.position, controllerPivot.transform.rotation * Vector3.forward, Color.green);
+        // Debug.DrawRay(controllerPivot.transform.position, Vector3.forward, Color.white, 0.1f, true);
+        // Debug.DrawRay(controllerPivot.transform.position, controllerPivot.transform.rotation * Vector3.forward, Color.green);
 
+        /*
         if (dragging)
         {
             if (GvrController.AppButtonUp)
@@ -147,10 +149,14 @@ private void UpdatePointer()
             }
             //Quaternion objectCurrentRotation = selectedObject.transform.rotation;
             //Quaternion elbowDeltaRotation = GvrController.Orientation * Quaternion.Inverse(elbowStartRotation);
-            float elbowAngle = -Quaternion.Angle((elbowStartRotation), controllerPivot.transform.rotation);
+
+            //*
+             * float elbowAngle = -Quaternion.Angle((elbowStartRotation), controllerPivot.transform.rotation);
             float objectAngle = Quaternion.Angle(objectStartRotation, selectedObject.transform.rotation);
             debugInfo.outsideText = "\nelbow angle: " + elbowAngle.ToString();
             selectedObject.transform.Rotate(Vector3.forward, (elbowAngle - objectAngle) * Time.deltaTime);
+            // * /
+
             //Quaternion.Slerp()
             //Debug.DrawRay(controllerPivot.transform.position, elbowDeltaRotation.eulerAngles);
             Debug.DrawRay(controllerPivot.transform.position, elbowStartRotation * Vector3.forward, Color.red);
@@ -172,7 +178,7 @@ private void UpdatePointer()
             }
             else
             {
-                SetSelectedObject(null);
+                //SetSelectedObject(null);
             }
 
             if (GvrController.AppButtonDown && selectedObject != null)
@@ -180,6 +186,7 @@ private void UpdatePointer()
                 //StartDragging();
             }
         }
+        */
     }
 
     private void SetSelectedObject(GameObject obj)
