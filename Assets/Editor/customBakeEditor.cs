@@ -24,11 +24,9 @@ public class CustomBakeEditor : EditorWindow
     {
         GUILayout.Label("Base Settings", EditorStyles.boldLabel);
         GUILayout.Label("", EditorStyles.boldLabel);
-        obj = (GameObject)EditorGUI.ObjectField(new Rect(3, 24, position.width - 6, 20), "Light to Ignore", obj, typeof(GameObject), true);
-
         obj = GameObject.Find("specularDayLight");
+        obj = (GameObject)EditorGUI.ObjectField(new Rect(3, 24, position.width - 6, 20), "Light to Ignore", obj, typeof(GameObject), true);
         
-
         if ( GUILayout.Button("Build Lighting") )
         {
             Debug.Log("build lighting, ignore: " + obj);

@@ -124,7 +124,7 @@ public class ControllerDemoManager : MonoBehaviour
 
     }
     
-private void UpdatePointer()
+    private void UpdatePointer()
     {
 
         //Vector3 forward = playerCamera.transform.TransformDirection(Vector3.forward) * 10;

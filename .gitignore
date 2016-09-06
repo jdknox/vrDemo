@@ -38,3 +38,4 @@ archive/
 Assets/audio/*_data
 Lightmap-*.exr*
 debug.log
+*.a
