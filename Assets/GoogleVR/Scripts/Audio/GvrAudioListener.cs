@@ -36,6 +36,7 @@ public class GvrAudioListener : MonoBehaviour {
 
   void Awake () {
     GvrAudio.Initialize(this, quality);
+    Debug.Log(this + " | ");
   }
 
   void OnEnable () {
