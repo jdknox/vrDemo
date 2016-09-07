@@ -14,4 +14,4 @@ The in-game controls are as follows:
 * App button: interact
 
 # Future improvements
-Optimization is always ongoing, targeting 60 FPS.  More interactions are in the works, as well as general polishing and cleanup.
+Optimization is always ongoing, targeting 60 FPS.  More interactions are in the works, as well as general polishing and cleanup.  Also, the code is in more of a prototyping stage; better use of OO principles would make it easier to extend and maintain.
