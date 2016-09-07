@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 242f4bc8470b86346ad2e08a098b3df6
 labels:
-- Prop
+- Architecture
 timeCreated: 1468029739
 licenseType: Free
 ModelImporter:
@@ -48,6 +48,7 @@ ModelImporter:
     100076: hourMarker
     100078: hourMarker_001
     100080: minuteMarker
+    100082: doorwayMolding
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -89,6 +90,7 @@ ModelImporter:
     400076: hourMarker
     400078: hourMarker_001
     400080: minuteMarker
+    400082: doorwayMolding
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -127,6 +129,7 @@ ModelImporter:
     2300070: hourMarker
     2300072: hourMarker_001
     2300074: minuteMarker
+    2300076: doorwayMolding
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -165,6 +168,7 @@ ModelImporter:
     3300070: hourMarker
     3300072: hourMarker_001
     3300074: minuteMarker
+    3300076: doorwayMolding
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -203,6 +207,7 @@ ModelImporter:
     4300070: hourMarker_001
     4300072: hourMarker
     4300074: minuteMarker
+    4300076: doorwayMolding
     7400000: Default Take
     9500000: //RootNode
   materials:
