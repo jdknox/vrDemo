@@ -32,7 +32,8 @@ Thumbs.db
 
 
 # custom #
-build/
+build/*
+!build/jeff_knox_vr_demo.apk
 archive/
 /images/
 Assets/audio/*_data

@@ -94,7 +94,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: net.knoxar.gvrTestUnityEmpty
-  bundleVersion: 0.0.1
+  bundleVersion: 0.1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   xboxOneDisableKinectGpuReservation: 0
@@ -161,7 +161,7 @@ PlayerSettings:
   iOSLaunchScreeniPadCustomXibPath: 
   iOSDeviceRequirements: []
   iOSURLSchemes: []
-  AndroidTargetDevice: 0
+  AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
