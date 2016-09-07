@@ -5,8 +5,8 @@ public class HandInteraction : MonoBehaviour {
 
     private Animator handAnimator;
     private GameObject playerHand;
-    private GameObject player;
-    private GameObject controllerPivot;
+    //private GameObject player;
+    //private GameObject controllerPivot;
     public ControllerDebugInfo debugInfo;
     
     public Vector3 handOffset;
@@ -21,9 +21,9 @@ public class HandInteraction : MonoBehaviour {
 
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //controllerPivot = GameObject.Find("ControllerPivot");
         playerHand = GameObject.FindGameObjectWithTag("playerHand");
-        controllerPivot = GameObject.Find("ControllerPivot");
         handAnimator = playerHand.GetComponent<Animator>();
         initialHandOffset = playerHand.transform.localPosition;
     }
@@ -32,14 +32,14 @@ public class HandInteraction : MonoBehaviour {
     {
         if (other.tag == "interactable" && other.isTrigger)
         {
-            Debug.Log("hand collides with: " + other.tag.ToString());
-            //Debug.Log("ENTER: hand intersects " + other.ToString() + "?: " + GetComponent<Collider>().bounds.Intersects(other.bounds));
+              //Debug.Log("hand collides with: " + other.tag.ToString());
+              //Debug.Log("ENTER: hand intersects " + other.ToString() + "?: " + GetComponent<Collider>().bounds.Intersects(other.bounds));
             handAnimator.SetTrigger("interactable");
             if (other.gameObject.GetComponent<ObjectInteract>() != null)
             {
                 selectedObject = other.gameObject;
                 canInteract = true;
-                Debug.Log("player hand near: " + selectedObject.ToString());
+                  //Debug.Log("player hand near: " + selectedObject.ToString());
             }
         }
     }
@@ -48,8 +48,8 @@ public class HandInteraction : MonoBehaviour {
     {
         if ( (other.tag == "interactable") && other.isTrigger )
         {
-            Debug.Log("player hand leaving: " + other.ToString());
-            //Debug.Log("EXIT: hand intersects " + other.ToString() + "?: " + GetComponent<Collider>().bounds.Intersects(other.bounds));
+              //Debug.Log("player hand leaving: " + other.ToString());
+              //Debug.Log("EXIT: hand intersects " + other.ToString() + "?: " + GetComponent<Collider>().bounds.Intersects(other.bounds));
             handAnimator.SetTrigger("point");
             handAnimator.SetBool("poking", false);
             selectedObject.GetComponent<ObjectInteract>().unregister();
@@ -82,7 +82,8 @@ public class HandInteraction : MonoBehaviour {
 
             if ( interacting )
             {
-                Debug.DrawLine(selectedObject.transform.position, playerHand.transform.position, Color.blue);
+                  //Debug.DrawLine(selectedObject.transform.position, playerHand.transform.position, Color.blue);
+                
                 //debugBegin.transform.position = selectedObject.transform.position;
                 //debugEnd.transform.position = playerHand.transform.position;
                 //debugInfo.outsideText = "line: " + selectedObject.transform.position.ToString() + playerHand.transform.position.ToString();

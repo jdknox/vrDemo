@@ -5,7 +5,6 @@ public class DoorInteract : ObjectInteract {
 
     public ControllerDebugInfo debugInfo;
 
-    private bool canInteract = false;
     private Rigidbody doorBody;
     public GameObject towerInterior;
 

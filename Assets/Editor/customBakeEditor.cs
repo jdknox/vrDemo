@@ -4,14 +4,11 @@ using System.Collections;
 
 public class CustomBakeEditor : EditorWindow
 {
-    string myString = "Hello World";
-    bool groupEnabled;
     bool myBool = false;
-    float myFloat = 1.23f;
 
     [SerializeField]
     public GameObject obj;
-    private ArrayList unhideMeshes = new ArrayList { "towerInterior" };
+    //private ArrayList unhideMeshes = new ArrayList { "towerInterior" };
 
     [MenuItem("Window/Custom Bake")]
 
