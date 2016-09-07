@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: bc487f96897e5c9469bec3182dced269
+timeCreated: 1470184698
+licenseType: Free
+ShaderImporter:
+  defaultTextures:
+  - _Control: {fileID: 2800000, guid: 1f792752c7e246b40a42d315eb1b1115, type: 3}
+  - _Splat3: {fileID: 2800000, guid: c6e0767b1f8c34890ac245217f4b9731, type: 3}
+  - _Splat2: {fileID: 2800000, guid: 440eb36db91ca410f800ff3cfe43572f, type: 3}
+  - _Splat1: {fileID: 2800000, guid: 18214e9d6af6248559d501391856f1c7, type: 3}
+  - _Splat0: {instanceID: 0}
+  - _Normal3: {instanceID: 0}
+  - _Normal2: {instanceID: 0}
+  - _Normal1: {instanceID: 0}
+  - _Normal0: {instanceID: 0}
+  - _MainTex: {fileID: 2800000, guid: c6e0767b1f8c34890ac245217f4b9731, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

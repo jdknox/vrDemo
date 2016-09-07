@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 242f4bc8470b86346ad2e08a098b3df6
+labels:
+- Prop
 timeCreated: 1468029739
 licenseType: Free
 ModelImporter:
@@ -29,6 +31,23 @@ ModelImporter:
     100042: towerExterior_MeshPart7
     100044: towerExterior_MeshPart8
     100046: towerExterior_MeshPart9
+    100048: Empty
+    100050: lowForBake
+    100052: lowForBake_001
+    100054: ceiling
+    100056: gearMinute
+    100058: gearPivot
+    100060: gearMinute_001
+    100062: gearMinute_002
+    100064: Circle
+    100066: Plane
+    100068: woodDesk
+    100070: gearHour
+    100072: lamp
+    100074: gearMinuteCollider
+    100076: hourMarker
+    100078: hourMarker_001
+    100080: minuteMarker
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -53,6 +72,23 @@ ModelImporter:
     400042: towerExterior_MeshPart7
     400044: towerExterior_MeshPart8
     400046: towerExterior_MeshPart9
+    400048: Empty
+    400050: lowForBake
+    400052: lowForBake_001
+    400054: ceiling
+    400056: gearMinute
+    400058: gearPivot
+    400060: gearMinute_001
+    400062: gearMinute_002
+    400064: Circle
+    400066: Plane
+    400068: woodDesk
+    400070: gearHour
+    400072: lamp
+    400074: gearMinuteCollider
+    400076: hourMarker
+    400078: hourMarker_001
+    400080: minuteMarker
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -76,6 +112,21 @@ ModelImporter:
     2300040: towerExterior_MeshPart7
     2300042: towerExterior_MeshPart8
     2300044: towerExterior_MeshPart9
+    2300046: lowForBake
+    2300048: lowForBake_001
+    2300050: ceiling
+    2300052: gearMinute
+    2300054: gearMinute_001
+    2300056: gearMinute_002
+    2300058: Circle
+    2300060: Plane
+    2300062: woodDesk
+    2300064: gearHour
+    2300066: lamp
+    2300068: gearMinuteCollider
+    2300070: hourMarker
+    2300072: hourMarker_001
+    2300074: minuteMarker
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -99,6 +150,21 @@ ModelImporter:
     3300040: towerExterior_MeshPart7
     3300042: towerExterior_MeshPart8
     3300044: towerExterior_MeshPart9
+    3300046: lowForBake
+    3300048: lowForBake_001
+    3300050: ceiling
+    3300052: gearMinute
+    3300054: gearMinute_001
+    3300056: gearMinute_002
+    3300058: Circle
+    3300060: Plane
+    3300062: woodDesk
+    3300064: gearHour
+    3300066: lamp
+    3300068: gearMinuteCollider
+    3300070: hourMarker
+    3300072: hourMarker_001
+    3300074: minuteMarker
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -122,6 +188,21 @@ ModelImporter:
     4300040: towerExterior_MeshPart14
     4300042: towerExterior_MeshPart15
     4300044: towerExterior_MeshPart16
+    4300046: lowForBake_001
+    4300048: lowForBake
+    4300050: ceiling
+    4300052: gearMinute
+    4300054: gearMinute_001
+    4300056: gearMinute_002
+    4300058: Circle
+    4300060: Plane
+    4300062: woodDesk
+    4300064: gearHour
+    4300066: lamp
+    4300068: gearMinuteCollider
+    4300070: hourMarker_001
+    4300072: hourMarker
+    4300074: minuteMarker
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -160,8 +241,8 @@ ModelImporter:
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15
-    secondaryUVHardAngle: 88
-    secondaryUVPackMargin: 4
+    secondaryUVHardAngle: 89
+    secondaryUVPackMargin: 8
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 0

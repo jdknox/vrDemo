@@ -1,4 +1,4 @@
-﻿// Copyright 2014 Google Inc. All rights reserved.
+// Copyright 2014 Google Inc. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Gvr.Internal;
 /// its starting properties.
 [AddComponentMenu("GoogleVR/GvrViewer")]
 public class GvrViewer : MonoBehaviour {
-  public const string GVR_SDK_VERSION = "0.8";
+  public const string GVR_SDK_VERSION = "0.9.1";
 
   /// The singleton instance of the GvrViewer class.
   public static GvrViewer Instance {
@@ -80,22 +80,6 @@ public class GvrViewer : MonoBehaviour {
   private static Camera currentMainCamera;
   private static StereoController currentController;
 
-  /// @cond
-  public bool UILayerEnabled {
-    get {
-      return uiLayerEnabled;
-    }
-    private set {
-      if (value != uiLayerEnabled && device != null) {
-        device.SetUILayerEnabled(value);
-      }
-      uiLayerEnabled = value;
-    }
-  }
-  // Not serialized.
-  private bool uiLayerEnabled = false;
-  /// @endcond
-
   /// Determine whether the scene renders in stereo or mono.
   /// _True_ means to render in stereo, and _false_ means to render in mono.
   public bool VRModeEnabled {
@@ -141,63 +125,6 @@ public class GvrViewer : MonoBehaviour {
   [SerializeField]
   private DistortionCorrectionMethod distortionCorrection = DistortionCorrectionMethod.Unity;
 
-  /// Enables or disables the vertical line rendered between the stereo views to
-  /// help the user align the viewer to the phone's screen.
-  public bool EnableAlignmentMarker {
-    get {
-      return enableAlignmentMarker;
-    }
-    set {
-      if (value != enableAlignmentMarker && device != null) {
-        device.SetAlignmentMarkerEnabled(value);
-      }
-      enableAlignmentMarker = value;
-    }
-  }
-  [SerializeField]
-  private bool enableAlignmentMarker = true;
-
-  /// Enables or disables the Cardboard settings button.  It appears as a gear icon
-  /// in the blank space between the stereo views.  The settings button opens the
-  /// Google Cardboard app to allow the user to configure their individual settings
-  /// and Cardboard headset parameters.
-  public bool EnableSettingsButton {
-    get {
-      return enableSettingsButton;
-    }
-    set {
-      if (value != enableSettingsButton && device != null) {
-        device.SetSettingsButtonEnabled(value);
-      }
-      enableSettingsButton = value;
-    }
-  }
-  [SerializeField]
-  private bool enableSettingsButton = true;
-
-  /// Display modes for the VR "Back Button".
-  public enum BackButtonModes {
-    Off,       /// Always off
-    OnlyInVR,  /// On in VR Mode, otherwise off
-    On         /// Always on
-  }
-
-  /// Whether to show the onscreen analog of the (Android) Back Button.
-  public BackButtonModes BackButtonMode {
-    get {
-      return backButtonMode;
-    }
-    set {
-      if (value != backButtonMode && device != null) {
-        device.SetVRBackButtonEnabled(value != BackButtonModes.Off);
-        device.SetShowVrBackButtonOnlyInVR(value == BackButtonModes.OnlyInVR);
-      }
-      backButtonMode = value;
-    }
-  }
-  [SerializeField]
-  private BackButtonModes backButtonMode = BackButtonModes.OnlyInVR;
-
   /// The native SDK will apply a neck offset to the head tracking, resulting in
   /// a more realistic model of a person's head position.  This control determines
   /// the scale factor of the offset.  To turn off the neck model, set it to 0, and
@@ -218,22 +145,6 @@ public class GvrViewer : MonoBehaviour {
   [SerializeField]
   private float neckModelScale = 0.0f;
 
-  /// @cond
-  public bool ElectronicDisplayStabilization {
-    get {
-      return electronicDisplayStabilization;
-    }
-    set {
-      if (value != electronicDisplayStabilization && device != null) {
-        device.SetElectronicDisplayStabilizationEnabled(value);
-      }
-      electronicDisplayStabilization = value;
-    }
-  }
-  [SerializeField]
-  private bool electronicDisplayStabilization = false;
-  /// @endcond
-
 #if UNITY_EDITOR
   /// Restores level head tilt in when playing in the Unity Editor after you
   /// release the Ctrl key.
@@ -241,7 +152,6 @@ public class GvrViewer : MonoBehaviour {
 
   /// @cond
   /// Use unity remote as the input source.
-  [HideInInspector]
   public bool UseUnityRemoteInput = false;
   /// @endcond
 
@@ -438,14 +348,9 @@ public class GvrViewer : MonoBehaviour {
       device.SetDefaultDeviceProfile(DefaultDeviceProfile);
     }
 
-    device.SetAlignmentMarkerEnabled(enableAlignmentMarker);
-    device.SetSettingsButtonEnabled(enableSettingsButton);
-    device.SetVRBackButtonEnabled(backButtonMode != BackButtonModes.Off);
-    device.SetShowVrBackButtonOnlyInVR(backButtonMode == BackButtonModes.OnlyInVR);
     device.SetDistortionCorrectionEnabled(distortionCorrection == DistortionCorrectionMethod.Native
         && NativeDistortionCorrectionSupported);
     device.SetNeckModelScale(neckModelScale);
-    device.SetElectronicDisplayStabilizationEnabled(electronicDisplayStabilization);
 
     device.SetVRModeEnabled(vrModeEnabled);
 
@@ -476,7 +381,7 @@ public class GvrViewer : MonoBehaviour {
   }
 
   void Start() {
-    UILayerEnabled = true;
+    AddStereoControllerToCameras();
   }
 
   void AddPrePostRenderStages() {
@@ -493,19 +398,6 @@ public class GvrViewer : MonoBehaviour {
       go.transform.parent = transform;
     }
   }
-
-  /// Emitted whenever a trigger occurs.
-  public event Action OnTrigger;
-
-  /// Emitted whenever the viewer is tilted on its side.
-  public event Action OnTilt;
-
-  /// Emitted whenever the app should respond to a possible change in the device viewer
-  /// profile, that is, the QR code scanned by the user.
-  public event Action OnProfileChange;
-
-  /// Emitted whenever the user presses the "VR Back Button".
-  public event Action OnBackButton;
 
   /// Whether the viewer's trigger was pulled. True for exactly one complete frame
   /// after each pull.
@@ -556,29 +448,15 @@ public class GvrViewer : MonoBehaviour {
   }
 
   private void DispatchEvents() {
-    // Update flags first by copying from device and other inputs.
-    Triggered = device.triggered || Input.GetMouseButtonDown(0);
+      // Update flags first by copying from device and other inputs.
+    Triggered = Input.GetMouseButtonDown(0);
     Tilted = device.tilted;
     ProfileChanged = device.profileChanged;
     BackButtonPressed = device.backButtonPressed || Input.GetKeyDown(KeyCode.Escape);
     // Reset device flags.
-    device.triggered = false;
     device.tilted = false;
     device.profileChanged = false;
     device.backButtonPressed = false;
-    // All flags updated.  Now emit events.
-    if (Tilted && OnTilt != null) {
-      OnTilt();
-    }
-    if (Triggered && OnTrigger != null) {
-      OnTrigger();
-    }
-    if (ProfileChanged && OnProfileChange != null) {
-      OnProfileChange();
-    }
-    if (BackButtonPressed && OnBackButton != null) {
-      OnBackButton();
-    }
   }
 
   /// Presents the #StereoScreen to the device for distortion correction and display.
@@ -598,6 +476,21 @@ public class GvrViewer : MonoBehaviour {
   /// Launch the device pairing and setup dialog.
   public void ShowSettingsDialog() {
     device.ShowSettingsDialog();
+  }
+
+  /// Add a StereoController to any camera that does not have a Render Texture (meaning it is
+  /// rendering to the screen).
+  public static void AddStereoControllerToCameras() {
+    for (int i = 0; i < Camera.allCameras.Length; i++) {
+      Camera camera = Camera.allCameras[i];
+      if (camera.targetTexture == null &&
+          camera.GetComponent<StereoController>() == null &&
+          camera.GetComponent<GvrEye>() == null &&
+          camera.GetComponent<GvrPreRender>() == null &&
+          camera.GetComponent<GvrPostRender>() == null) {
+        camera.gameObject.AddComponent<StereoController>();
+      }
+    }
   }
 
   void OnEnable() {
@@ -632,7 +525,6 @@ public class GvrViewer : MonoBehaviour {
 
   void OnDestroy() {
     VRModeEnabled = false;
-    UILayerEnabled = false;
     if (device != null) {
       device.Destroy();
     }
