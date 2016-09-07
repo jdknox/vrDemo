@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CullTower : MonoBehaviour
 {
@@ -33,10 +34,22 @@ public class CullTower : MonoBehaviour
 
     }
 
+    private static void removeAllTextures()
+    {
+        var sceneMaterials = new List<Material>(Resources.FindObjectsOfTypeAll<Material>());
+        //string output = "scene materials: ";
+        foreach (var material in sceneMaterials)
+        {
+            material.mainTexture = null;
+        }
+        //Debug.Log(output);
+    }
+
     // OnTriggerEnter is called when the Collider other enters the trigger
     public void OnTriggerEnter(Collider other)
     {
         triggerRenderer(other, false);
+        //removeAllTextures();
     }
 
     // OnTriggerExit is called when the Collider other has stopped touching the trigger

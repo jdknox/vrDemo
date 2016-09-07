@@ -147,7 +147,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1367924456}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!23 &2385203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1367924456}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!23 &169230554
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2449,7 +2449,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 632657698}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5a8c1896ba71746b1f600e1567ed54, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &632657701
@@ -3304,8 +3304,6 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3374eb25cdeef954e835e8d1940eb522, type: 2}
-  - {fileID: 2100000, guid: 71acdd5434ab952469c072547b57f088, type: 2}
   - {fileID: 2100000, guid: 3374eb25cdeef954e835e8d1940eb522, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
