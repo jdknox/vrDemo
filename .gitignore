@@ -29,3 +29,14 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+# custom #
+build/
+archive/
+/images/
+Assets/audio/*_data
+Assets/Plugins
+Lightmap-*.exr*
+debug.log
+*.a
