@@ -1,4 +1,4 @@
-# gvrDemo 0.1.0 alpha
+# gvrDemo 0.1.1 alpha
 Google Daydream demo app using Unity 5.4
 
 This is a simple Daydream app created to showcase the technical skills necessary for producing an interactive VR world.
