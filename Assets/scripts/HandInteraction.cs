@@ -84,7 +84,7 @@ public class HandInteraction : MonoBehaviour {
             }
             debugEndPoint = rayInfo.point;
             Debug.DrawLine(playerCamera.transform.position, debugEndPoint, Color.green);
-            Debug.Log("collision: " + rayInfo.collider.gameObject);
+            //** Debug.Log("collision: " + rayInfo.collider.gameObject);
         }
         //Debug.DrawLine(debugEndPoint, playerHand.transform.position, Color.blue);
 
