@@ -49,6 +49,12 @@ ModelImporter:
     100078: hourMarker_001
     100080: minuteMarker
     100082: doorwayMolding
+    100084: crank
+    100086: Cylinder
+    100088: clockFace
+    100090: minuteHand
+    100092: minuteHand_001
+    100094: hourHand
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -91,6 +97,12 @@ ModelImporter:
     400078: hourMarker_001
     400080: minuteMarker
     400082: doorwayMolding
+    400084: crank
+    400086: Cylinder
+    400088: clockFace
+    400090: minuteHand
+    400092: minuteHand_001
+    400094: hourHand
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -130,6 +142,12 @@ ModelImporter:
     2300072: hourMarker_001
     2300074: minuteMarker
     2300076: doorwayMolding
+    2300078: crank
+    2300080: Cylinder
+    2300082: clockFace
+    2300084: minuteHand
+    2300086: minuteHand_001
+    2300088: hourHand
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -169,6 +187,12 @@ ModelImporter:
     3300072: hourMarker_001
     3300074: minuteMarker
     3300076: doorwayMolding
+    3300078: crank
+    3300080: Cylinder
+    3300082: clockFace
+    3300084: minuteHand
+    3300086: minuteHand_001
+    3300088: hourHand
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -208,6 +232,12 @@ ModelImporter:
     4300072: hourMarker
     4300074: minuteMarker
     4300076: doorwayMolding
+    4300078: crank
+    4300080: Cylinder
+    4300082: clockFace
+    4300084: minuteHand_001
+    4300086: minuteHand
+    4300088: hourHand
     7400000: Default Take
     9500000: //RootNode
   materials:
