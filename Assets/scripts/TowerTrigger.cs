@@ -8,6 +8,7 @@ public class TowerTrigger : MonoBehaviour {
     private GameObject gearHour;
     private GameObject gearMinute;
 
+    private UpdateClockHands[] clockScripts;
 
     // Use this for initialization
     void Awake () {
@@ -15,6 +16,8 @@ public class TowerTrigger : MonoBehaviour {
         minuteHand = GameObject.Find("minuteHand");
         gearHour = GameObject.Find("gearHour");
         gearMinute = GameObject.Find("gearMinute");
+
+        clockScripts = GameObject.FindObjectsOfType(typeof(UpdateClockHands)) as UpdateClockHands[];
     }
 	
 	// Update is called once per frame
@@ -34,6 +37,11 @@ public class TowerTrigger : MonoBehaviour {
 
             minuteHand.transform.localRotation = Quaternion.AngleAxis(minuteAngle, Vector3.forward);
             hourHand.transform.localRotation = Quaternion.AngleAxis(hourAngle + minuteAngle / 12f, Vector3.forward);
+
+            foreach (var clockScript in clockScripts)
+            {
+                clockScript.updateClock();
+            }
         }
     }
 }

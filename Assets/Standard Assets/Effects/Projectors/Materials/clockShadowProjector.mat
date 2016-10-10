@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ShadowProjector
+  m_Name: clockShadowProjector
   m_Shader: {fileID: 4800000, guid: 5a5a59eaab6cfea4b8ea4370e6e0deb9, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -18,13 +18,13 @@ Material:
     - first:
         name: _FalloffTex
       second:
-        m_Texture: {fileID: 2800000, guid: 23740055e2b119e40a939138ab8070f8, type: 3}
+        m_Texture: {fileID: 2800000, guid: ce8bb389cd4bf0d44a0b19e3b70d47f3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _ShadowTex
       second:
-        m_Texture: {fileID: 2800000, guid: 77e673c8ffb2ad64a824e95e090a389c, type: 3}
+        m_Texture: {fileID: 2800000, guid: dd7ec9c20148f1d4bb9b164d9a94c631, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
