@@ -55,6 +55,8 @@ ModelImporter:
     100090: minuteHand
     100092: minuteHand_001
     100094: hourHand
+    100096: romanNumerals
+    100098: romanNumerals_001
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -103,6 +105,8 @@ ModelImporter:
     400090: minuteHand
     400092: minuteHand_001
     400094: hourHand
+    400096: romanNumerals
+    400098: romanNumerals_001
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -148,6 +152,8 @@ ModelImporter:
     2300084: minuteHand
     2300086: minuteHand_001
     2300088: hourHand
+    2300090: romanNumerals
+    2300092: romanNumerals_001
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -193,6 +199,8 @@ ModelImporter:
     3300084: minuteHand
     3300086: minuteHand_001
     3300088: hourHand
+    3300090: romanNumerals
+    3300092: romanNumerals_001
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -238,6 +246,8 @@ ModelImporter:
     4300084: minuteHand_001
     4300086: minuteHand
     4300088: hourHand
+    4300090: romanNumerals_001
+    4300092: romanNumerals
     7400000: Default Take
     9500000: //RootNode
   materials:
