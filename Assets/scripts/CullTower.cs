@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CullTower : MonoBehaviour
 {
 
-    public GameObject character;
+    public Material blankMaterial;
 
     private GameObject playerCollider;
     //private GameObject towerExterior;
@@ -34,13 +34,30 @@ public class CullTower : MonoBehaviour
 
     }
 
-    private static void removeAllTextures()
+    private void removeAllTextures()
     {
-        var sceneMaterials = new List<Material>(Resources.FindObjectsOfTypeAll<Material>());
+        var sceneObjects = new List<GameObject>(Resources.FindObjectsOfTypeAll<GameObject>());
+        //sceneObjects.Add(GameObject.Find("woodDesk"));
         //string output = "scene materials: ";
-        foreach (var material in sceneMaterials)
+        foreach (var item in sceneObjects)
         {
-            material.mainTexture = null;
+            var renderer = item.GetComponent<MeshRenderer>();
+            if (renderer)
+            {
+                var materials = renderer.sharedMaterials;
+                if ( materials.Length > 1 )
+                {
+                    for ( int i = 0; i < materials.Length; ++i )
+                    {
+                        materials[i] = blankMaterial;
+                    }
+                    renderer.materials = materials;
+                }
+                else
+                {
+                    renderer.material = blankMaterial;
+                }
+            }
         }
         //Debug.Log(output);
     }
