@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissioßns and
 // limitations under the License.
 
+// The controller is not available for versions of Unity without the
+// // GVR native integration.
+#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +45,7 @@ public class ControllerDebugInfo : MonoBehaviour {
       //"ACC: ({11,5:F1}, {12,5:F1}, {13,5:F1})\n" +
       "TOUCH: {14} {15} ({16,4:F2}, {17,4:F2})\n" +
       "BUTTONS: {18} {19}\n" +
-      "RECENTER: {20}\n",
+      //"RECENTER: {20}",
       GvrController.State,
       GvrController.Orientation.x, GvrController.Orientation.y, GvrController.Orientation.z,
       GvrController.Orientation.w,
@@ -54,29 +58,33 @@ public class ControllerDebugInfo : MonoBehaviour {
       GvrController.ClickButton ? "CLICK" : "",
       GvrController.AppButton ? "APP" : "",
       GvrController.Recentering ? "**RECENTERING**" : "");
+   
+    text.text += string.Format("debug: {0}\n", outsideText);
 
-    text.text += string.Format("normalized position: {0}\n", outsideText);
-
-    //if (GvrController.TouchDown) {
-    //  Debug.Log("CONTROLLER EVENT: Touch down");
-    //}
-    //if (GvrController.TouchUp) {
-    //  Debug.Log("CONTROLLER EVENT: Touch up");
-    //}
-    //if (GvrController.ClickButtonDown) {
-    //  Debug.Log("CONTROLLER EVENT: CLICK button down");
-    //}
-    //if (GvrController.ClickButtonUp) {
-    //  Debug.Log("CONTROLLER EVENT: CLICK button up");
-    //}
-    //if (GvrController.AppButtonDown) {
-    //  Debug.Log("CONTROLLER EVENT: APP button down");
-    //}
-    //if (GvrController.AppButtonUp) {
-    //  Debug.Log("CONTROLLER EVENT: APP button up");
-    //}
-    //if (GvrController.Recentered) {
-    //  Debug.Log("CONTROLLER EVENT: Recentered.");
-    //}
+/*
+    if (GvrController.TouchDown) {
+      Debug.Log("CONTROLLER EVENT: Touch down");
+    }
+    if (GvrController.TouchUp) {
+      Debug.Log("CONTROLLER EVENT: Touch up");
+    }
+    if (GvrController.ClickButtonDown) {
+      Debug.Log("CONTROLLER EVENT: CLICK button down");
+    }
+    if (GvrController.ClickButtonUp) {
+      Debug.Log("CONTROLLER EVENT: CLICK button up");
+    }
+    if (GvrController.AppButtonDown) {
+      Debug.Log("CONTROLLER EVENT: APP button down");
+    }
+    if (GvrController.AppButtonUp) {
+      Debug.Log("CONTROLLER EVENT: APP button up");
+    }
+    if (GvrController.Recentered) {
+      Debug.Log("CONTROLLER EVENT: Recentered.");
+    }
+    */
   }
 }
+
+#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)

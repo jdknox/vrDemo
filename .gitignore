@@ -30,6 +30,11 @@ obj/
 ehthumbs.db
 Thumbs.db
 
+# ============ #
+# Google VR #
+# ============ #
+*.dll
+*.so
 
 # custom #
 build/*

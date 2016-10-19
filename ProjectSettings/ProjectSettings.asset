@@ -52,7 +52,7 @@ PlayerSettings:
   resizableWindow: 0
   useMacAppStoreValidation: 0
   gpuSkinning: 1
-  graphicsJobs: 1
+  graphicsJobs: 0
   xboxPIXTextureCapture: 0
   xboxEnableAvatar: 0
   xboxEnableKinect: 0
@@ -95,14 +95,19 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: net.knoxar.jeffknox.vrdemo
-  bundleVersion: 0.1.1
+  bundleVersion: 0.2.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   xboxOneDisableKinectGpuReservation: 0
   singlePassStereoRendering: 0
+  vrSettings:
+    google:
+      depthFormat: 0
+      useSustainedPerformanceMode: 1
+  vrSplashScreenShouldntTagAlong: 0
   protectGraphicsMemory: 0
-  AndroidBundleVersionCode: 101
-  AndroidMinSdkVersion: 22
+  AndroidBundleVersionCode: 200
+  AndroidMinSdkVersion: 24
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 2
@@ -414,6 +419,10 @@ PlayerSettings:
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
+  vrEditorSettings:
+    google:
+      daydreamIconForeground: {fileID: 0}
+      daydreamIconBackground: {fileID: 0}
   intPropertyNames:
   - Android::ScriptingBackend
   - Standalone::ScriptingBackend
@@ -448,7 +457,7 @@ PlayerSettings:
   - tvOS::VR::enable
   Android::RequireES31: 1
   Android::RequireES31AEP: 1
-  Android::VR::enable: 0
+  Android::VR::enable: 1
   Metro::VR::enable: 0
   N3DS::VR::enable: 0
   PS3::VR::enable: 0
@@ -504,7 +513,7 @@ PlayerSettings:
   - iOS::VR::enabledDevices
   - tvOS::VR::enabledDevices
   Android::VR::enabledDevices:
-  - Oculus
+  - daydream
   Metro::VR::enabledDevices: []
   N3DS::VR::enabledDevices: []
   PS3::VR::enabledDevices: []

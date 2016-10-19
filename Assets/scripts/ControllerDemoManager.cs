@@ -12,7 +12,10 @@
 // See the License for the specific language governing permissioßns and
 // limitations under the License.
 
-using System;
+// The controller is not available for versions of Unity without the
+// // GVR native integration.
+#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,7 +47,7 @@ public class ControllerDemoManager : MonoBehaviour
     void Start()
     {
         characterManager = GameObject.Find("character").GetComponent<CharacterManager>();
-        debugInfo.outsideText = GameObject.Find("character").ToString();
+        //debugInfo.outsideText = GameObject.Find("character").ToString();
             //debugInfo.outsideText = characterManager.ToString();
     }
 
@@ -140,3 +143,5 @@ public class ControllerDemoManager : MonoBehaviour
         }
     }
 }
+
+#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)

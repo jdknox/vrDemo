@@ -23,6 +23,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+using UnityEngine.VR;
+#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+
 /// This script provides an implemention of Unity's `BaseInputModule` class, so
 /// that Canvas-based (_uGUI_) UI elements can be selected by looking at them and
 /// pulling the viewer's trigger or touching the screen.
@@ -63,9 +67,15 @@ public class GazeInputModule : BaseInputModule {
 
   /// @cond
   public override bool ShouldActivateModule() {
-    bool activeState = base.ShouldActivateModule();
 
-    activeState = activeState && (GvrViewer.Instance.VRModeEnabled || !vrModeOnly);
+    bool isVrModeEnabled = !vrModeOnly;
+#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+    isVrModeEnabled |= VRSettings.enabled;
+#else
+    isVrModeEnabled |= GvrViewer.Instance.VRModeEnabled;
+#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+
+    bool activeState = base.ShouldActivateModule() && isVrModeEnabled;
 
     if (activeState != isActive) {
       isActive = activeState;
@@ -105,18 +115,24 @@ public class GazeInputModule : BaseInputModule {
     UpdateCurrentObject();
     UpdateReticle(gazeObjectPrevious);
 
+    bool isGvrTriggered = Input.GetMouseButtonDown(0);
+    bool handlePendingClickRequired = !Input.GetMouseButton(0);
+
+#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+    handlePendingClickRequired &= !GvrController.ClickButton;
+    isGvrTriggered |= GvrController.ClickButtonDown;
+#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+
     // Handle input
     if (!Input.GetMouseButtonDown(0) && Input.GetMouseButton(0)) {
       HandleDrag();
     } else if (Time.unscaledTime - pointerData.clickTime < clickTime) {
       // Delay new events until clickTime has passed.
     } else if (!pointerData.eligibleForClick &&
-               (GvrViewer.Instance.Triggered || Input.GetMouseButtonDown(0) ||
-                GvrController.ClickButtonDown)) {
+        (isGvrTriggered || Input.GetMouseButtonDown(0))) {
       // New trigger action.
       HandleTrigger();
-    } else if (!GvrViewer.Instance.Triggered && !Input.GetMouseButton(0) &&
-               !GvrController.ClickButton) {
+    } else if (handlePendingClickRequired) {
       // Check if there is a pending click to handle.
       HandlePendingClick();
     }
@@ -124,7 +140,14 @@ public class GazeInputModule : BaseInputModule {
   /// @endcond
 
   private void CastRayFromGaze() {
-    Vector2 headPose = NormalizedCartesianToSpherical(GvrViewer.Instance.HeadPose.Orientation * Vector3.forward);
+    Quaternion headOrientation;
+#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+    headOrientation = InputTracking.GetLocalRotation(VRNode.Head);
+#else
+    headOrientation = GvrViewer.Instance.HeadPose.Orientation;
+#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+
+    Vector2 headPose = NormalizedCartesianToSpherical(headOrientation * Vector3.forward);
 
     if (pointerData == null) {
       pointerData = new PointerEventData(eventSystem);
@@ -133,7 +156,7 @@ public class GazeInputModule : BaseInputModule {
 
     // Cast a ray into the scene
     pointerData.Reset();
-    pointerData.position = new Vector2(0.5f * Screen.width, 0.5f * Screen.height);
+    pointerData.position = GetGazePointerPosition();
     eventSystem.RaycastAll(pointerData, m_RaycastResultCache);
     pointerData.pointerCurrentRaycast = FindFirstRaycast(m_RaycastResultCache);
     m_RaycastResultCache.Clear();
@@ -311,6 +334,20 @@ public class GazeInputModule : BaseInputModule {
     }
 
     gazePointer.OnGazeDisabled();
+  }
+
+  private Vector2 GetGazePointerPosition() {
+    int viewportWidth = Screen.width;
+    int viewportHeight = Screen.height;
+#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR) && UNITY_ANDROID
+    // GVR native integration is supported.
+    if (VRSettings.enabled) {
+      viewportWidth = VRSettings.eyeTextureWidth;
+      viewportHeight = VRSettings.eyeTextureHeight;
+    }
+#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR) && UNITY_ANDROID
+
+    return new Vector2(0.5f * viewportWidth, 0.5f * viewportHeight);
   }
 }
 
