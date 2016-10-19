@@ -4,6 +4,7 @@ using System.Collections;
 public class GearInteract : ObjectInteract {
 
     public ControllerDebugInfo debugInfo;
+    public GameObject stonePlate;
 
     private GameObject playerHand;
     private Vector3 beginInteractVector;

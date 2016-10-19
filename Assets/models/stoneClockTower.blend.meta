@@ -57,6 +57,10 @@ ModelImporter:
     100094: hourHand
     100096: romanNumerals
     100098: romanNumerals_001
+    100100: chime_01
+    100102: chimes
+    100104: stonePlate
+    100106: key
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -107,6 +111,10 @@ ModelImporter:
     400094: hourHand
     400096: romanNumerals
     400098: romanNumerals_001
+    400100: chime_01
+    400102: chimes
+    400104: stonePlate
+    400106: key
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -154,6 +162,10 @@ ModelImporter:
     2300088: hourHand
     2300090: romanNumerals
     2300092: romanNumerals_001
+    2300094: chime_01
+    2300096: chimes
+    2300098: stonePlate
+    2300100: key
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -201,6 +213,10 @@ ModelImporter:
     3300088: hourHand
     3300090: romanNumerals
     3300092: romanNumerals_001
+    3300094: chime_01
+    3300096: chimes
+    3300098: stonePlate
+    3300100: key
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -248,6 +264,10 @@ ModelImporter:
     4300088: hourHand
     4300090: romanNumerals_001
     4300092: romanNumerals
+    4300094: chime_01
+    4300096: chimes
+    4300098: stonePlate
+    4300100: key
     7400000: Default Take
     9500000: //RootNode
   materials:

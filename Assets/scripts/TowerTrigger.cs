@@ -17,7 +17,7 @@ public class TowerTrigger : MonoBehaviour {
         gearHour = GameObject.Find("gearHour");
         gearMinute = GameObject.Find("gearMinute");
 
-        clockScripts = GameObject.FindObjectsOfType(typeof(UpdateClockHands)) as UpdateClockHands[];
+        clockScripts = GameObject.FindObjectsOfType(typeof(UpdateClockHands)) as UpdateClockHands[];        
     }
 	
 	// Update is called once per frame
@@ -32,16 +32,21 @@ public class TowerTrigger : MonoBehaviour {
 
         if (other.tag == "playerHand")
         {
-            float minuteAngle = Mathf.Round((gearMinute.transform.localRotation.eulerAngles.z % 360) / 6) * 6f;
-            float hourAngle = Mathf.Round((gearHour.transform.localRotation.eulerAngles.z % 360) / 12) * 12f;
+            int hour = (int)Mathf.Round((gearHour.transform.localRotation.eulerAngles.z) / 30) % 12;
+            int minute = (int)Mathf.Round((gearMinute.transform.localRotation.eulerAngles.z) / 6) % 60;
 
-            minuteHand.transform.localRotation = Quaternion.AngleAxis(minuteAngle, Vector3.forward);
+            float hourAngle =  hour * 30f;
+            float minuteAngle = minute * 6f;
+
             hourHand.transform.localRotation = Quaternion.AngleAxis(hourAngle + minuteAngle / 12f, Vector3.forward);
+            minuteHand.transform.localRotation = Quaternion.AngleAxis(minuteAngle, Vector3.forward);
 
             foreach (var clockScript in clockScripts)
             {
                 clockScript.updateClock();
             }
+
+            Debug.Log("time: " + (hour) + ":" + (minute));
         }
     }
 }
