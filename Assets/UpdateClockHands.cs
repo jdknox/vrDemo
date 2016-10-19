@@ -41,7 +41,7 @@ public class UpdateClockHands : MonoBehaviour {
         sign = Mathf.Sign(phi);
         float orthoOffset = magic * Mathf.Pow(sign * phi, 1.6f);
 
-        debugInfo.outsideText = xAngle + ", " + yAngle.ToString();
+        //debugInfo.outsideText = xAngle + ", " + yAngle.ToString();
         gameObject.transform.localRotation = Quaternion.Euler(xAngle, yAngle, 0f);
         projector.transform.localPosition = new Vector3(xOffset, 0f, zOffset);
         projector.orthographicSize = orthoSize + orthoOffset;
