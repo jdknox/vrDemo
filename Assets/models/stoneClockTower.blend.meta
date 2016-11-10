@@ -61,6 +61,8 @@ ModelImporter:
     100102: chimes
     100104: stonePlate
     100106: key
+    100108: crankMechanism
+    100110: crankMechanismHole
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -115,6 +117,8 @@ ModelImporter:
     400102: chimes
     400104: stonePlate
     400106: key
+    400108: crankMechanism
+    400110: crankMechanismHole
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -166,6 +170,8 @@ ModelImporter:
     2300096: chimes
     2300098: stonePlate
     2300100: key
+    2300102: crankMechanism
+    2300104: crankMechanismHole
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -217,6 +223,8 @@ ModelImporter:
     3300096: chimes
     3300098: stonePlate
     3300100: key
+    3300102: crankMechanism
+    3300104: crankMechanismHole
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -268,6 +276,8 @@ ModelImporter:
     4300096: chimes
     4300098: stonePlate
     4300100: key
+    4300102: crankMechanism
+    4300104: crankMechanismHole
     7400000: Default Take
     9500000: //RootNode
   materials:

@@ -3,20 +3,24 @@ using System.Collections;
 
 public class GearInteract : ObjectInteract {
 
-    public ControllerDebugInfo debugInfo;
     public GameObject stonePlate;
 
+    private TowerTrigger towerTrigger;
     private GameObject playerHand;
+
     private Vector3 beginInteractVector;
     private Vector3 hingeAxis;
     private Quaternion beginOrientation;
     private Quaternion endOrientation;
+
     private float currentAngularVelocity;
 
 	// Use this for initialization
 	void Awake () {
         playerHand = GameObject.FindGameObjectWithTag("playerHand");
         hingeAxis = transform.TransformDirection(GetComponent<HingeJoint>().axis);
+
+        towerTrigger = GameObject.FindObjectOfType(typeof(TowerTrigger)) as TowerTrigger;
     }
 
     void OnEnable()
@@ -44,6 +48,8 @@ public class GearInteract : ObjectInteract {
         HandInteraction.onInteract -= rotate;
         gameObject.GetComponent<Rigidbody>().angularVelocity = currentAngularVelocity * hingeAxis;
         currentAngularVelocity = 0f;
+
+        Debug.Log("time matches: " + towerTrigger.checkClockTime());
     }
 
     private void rotate()
