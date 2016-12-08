@@ -6,6 +6,7 @@ public class GearInteract : ObjectInteract {
     public GameObject stonePlate;
 
     private TowerTrigger towerTrigger;
+    private KeyInteract keyInteract;
     private GameObject playerHand;
 
     private Vector3 beginInteractVector;
@@ -21,6 +22,7 @@ public class GearInteract : ObjectInteract {
         hingeAxis = transform.TransformDirection(GetComponent<HingeJoint>().axis);
 
         towerTrigger = GameObject.FindObjectOfType(typeof(TowerTrigger)) as TowerTrigger;
+        keyInteract = GameObject.FindObjectOfType(typeof(KeyInteract)) as KeyInteract;
     }
 
     void OnEnable()
@@ -49,7 +51,10 @@ public class GearInteract : ObjectInteract {
         gameObject.GetComponent<Rigidbody>().angularVelocity = currentAngularVelocity * hingeAxis;
         currentAngularVelocity = 0f;
 
-        Debug.Log("time matches: " + towerTrigger.checkClockTime());
+        if( towerTrigger.checkClockTime() )
+        {
+            keyInteract.dropKey();
+        }
     }
 
     private void rotate()
