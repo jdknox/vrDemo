@@ -48,8 +48,7 @@ public class ControllerDemoManager : MonoBehaviour
     {
         characterManager = GameObject.Find("character").GetComponent<CharacterManager>();
         //debugInfo.outsideText = GameObject.Find("character").ToString();
-            //debugInfo.outsideText = characterManager.ToString();
-        
+        //debugInfo.outsideText = characterManager.ToString();
     }
 
     void Update()

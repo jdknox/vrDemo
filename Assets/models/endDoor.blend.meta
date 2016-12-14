@@ -9,22 +9,27 @@ ModelImporter:
     100002: doorFrame
     100004: doorFrame_001
     100006: endDoor
+    100008: keyHole
     400000: //RootNode
     400002: doorFrame
     400004: doorFrame_001
     400006: endDoor
+    400008: keyHole
     2300000: //RootNode
     2300002: doorFrame
     2300004: doorFrame_001
     2300006: endDoor
+    2300008: keyHole
     3300000: //RootNode
     3300002: doorFrame
     3300004: doorFrame_001
     3300006: endDoor
+    3300008: keyHole
     4300000: Cube
     4300002: doorFrame
     4300004: doorFrame_001
     4300006: endDoor
+    4300008: keyHole
     7400000: Default Take
     9500000: //RootNode
   materials:

@@ -95,7 +95,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: net.knoxar.jeffknox.vrdemo
-  bundleVersion: 0.2.0
+  bundleVersion: 0.2.3
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   xboxOneDisableKinectGpuReservation: 0
@@ -106,11 +106,11 @@ PlayerSettings:
       useSustainedPerformanceMode: 1
   vrSplashScreenShouldntTagAlong: 0
   protectGraphicsMemory: 0
-  AndroidBundleVersionCode: 200
+  AndroidBundleVersionCode: 203
   AndroidMinSdkVersion: 24
   AndroidPreferredInstallLocation: 1
   aotOptions: 
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 1
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
