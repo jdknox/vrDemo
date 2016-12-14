@@ -30,7 +30,7 @@ public class HandInteraction : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "interactable" && other.isTrigger)
+        if (other.tag == "interactable" && other.isTrigger && other.gameObject.activeInHierarchy)
         {
               //Debug.Log("hand collides with: " + other.tag.ToString());
               //Debug.Log("ENTER: hand intersects " + other.ToString() + "?: " + GetComponent<Collider>().bounds.Intersects(other.bounds));

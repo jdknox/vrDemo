@@ -3,12 +3,14 @@ using System.Collections;
 
 public class KeyHoleInteract : ObjectInteract
 {
+    public GameObject endDoor;
+
     private bool keyInRange = false;
     private GameObject key;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+	    
 	}
 	
 	// Update is called once per frame
@@ -52,6 +54,8 @@ public class KeyHoleInteract : ObjectInteract
             key.transform.parent = this.transform;
             key.transform.localPosition = Vector3.zero;
             key.transform.localRotation = Quaternion.identity;
+
+            endDoor.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 }

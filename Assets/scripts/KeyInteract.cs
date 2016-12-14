@@ -73,6 +73,7 @@ public class KeyInteract : ObjectInteract
     public void dropKey()
     {
         GetComponent<Rigidbody>().isKinematic = false;
+        gameObject.tag = "interactable";
         stonePlateRenderer.material.mainTexture = stonePlate.stonePlateKeyTexture;
     }
 
