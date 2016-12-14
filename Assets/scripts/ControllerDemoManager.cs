@@ -16,6 +16,8 @@
 // // GVR native integration.
 #if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
 
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,7 +35,7 @@ public class ControllerDemoManager : MonoBehaviour
     private CharacterManager characterManager;
     private GameObject playerCollider;
 
-    // testing manipulating objects
+    /// testing manipulating objects
     private Quaternion objectStartRotation;
     private Quaternion elbowStartRotation;
 
@@ -42,6 +44,25 @@ public class ControllerDemoManager : MonoBehaviour
         playerCollider = GameObject.Find("playerCollider");
         character.SetActive(true);
         GameObject.Find("towerInterior").SetActive(false);
+
+        if ( UnityEngine.SceneManagement.SceneManager.sceneCount < 2 )
+        {
+            //Debug.Log("Scenea loaded: " + UnityEngine.SceneManagement.SceneManager.sceneCount);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("endScene", UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        }
+
+        //StartCoroutine(setupCameras(10f));
+    }
+
+    private IEnumerator setupCameras(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        Camera camera = GameObject.Find("Camera Left").GetComponent<Camera>();
+        camera.cullingMask ^= 1 << LayerMask.NameToLayer("portalR");
+
+        camera = GameObject.Find("Camera Right").GetComponent<Camera>();
+        camera.cullingMask ^= 1 << LayerMask.NameToLayer("portalL");
     }
 
     void Start()
@@ -56,7 +77,7 @@ public class ControllerDemoManager : MonoBehaviour
         UpdatePointer();
         UpdateStatusMessage();
 
-        // rotate the player collider box only on the y-axis        
+        /// rotate the player collider box only on the y-axis        
         playerCollider.GetComponent<BoxCollider>().transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
             //debugInfo.outsideText = "camera y rotation: " + (playerCamera.transform.rotation.eulerAngles) + ": " + playerCamera.transform.rotation.y;//.localRotation = playerCamera.transform.rotation;
     }
@@ -74,7 +95,7 @@ public class ControllerDemoManager : MonoBehaviour
 
         if (GvrController.IsTouching)
         {
-            float fudgeFactor = 1.43f;  // daydream controller doesn't go all the way to 1.0 with the printed cover
+            float fudgeFactor = 1.43f;  /// daydream controller doesn't go all the way to 1.0 with the printed cover
 
             var moveVector = 2 * GvrController.TouchPos - Vector2.one;
             moveVector.y = Mathf.Clamp(-moveVector.y, -0.81f, 1.0f);
@@ -86,7 +107,7 @@ public class ControllerDemoManager : MonoBehaviour
 
             var direction = moveVector.normalized;
 
-            // clean up input values, avoid the dead zone, and normalize -1 to +1
+            /// clean up input values, avoid the dead zone, and normalize -1 to +1
             magnitude = magnitude * magnitude * (magnitude - deadZone) / (1.0f - deadZone); // use cubic function to achieve more precision at slow speeds
 
             moveVector = direction * magnitude * Time.deltaTime * characterManager.maxPlayerSpeed * fudgeFactor;

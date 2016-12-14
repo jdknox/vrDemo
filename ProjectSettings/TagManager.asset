@@ -6,6 +6,7 @@ TagManager:
   tags:
   - interactable
   - playerHand
+  - portal
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - noCollision
   - key
   - stonePlate
-  - 
-  - 
+  - portalR
+  - portalL
   - 
   - 
   - 
