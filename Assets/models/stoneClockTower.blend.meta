@@ -63,9 +63,6 @@ ModelImporter:
     100106: key
     100108: crankMechanism
     100110: crankMechanismHole
-    100112: _gearMinuteCollider
-    100114: ___
-    100116: gearHourCollider
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -122,9 +119,6 @@ ModelImporter:
     400106: key
     400108: crankMechanism
     400110: crankMechanismHole
-    400112: _gearMinuteCollider
-    400114: ___
-    400116: gearHourCollider
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -178,9 +172,6 @@ ModelImporter:
     2300100: key
     2300102: crankMechanism
     2300104: crankMechanismHole
-    2300106: _gearMinuteCollider
-    2300108: ___
-    2300110: gearHourCollider
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -234,9 +225,6 @@ ModelImporter:
     3300100: key
     3300102: crankMechanism
     3300104: crankMechanismHole
-    3300106: _gearMinuteCollider
-    3300108: ___
-    3300110: gearHourCollider
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_002
@@ -290,9 +278,6 @@ ModelImporter:
     4300100: key
     4300102: crankMechanism
     4300104: crankMechanismHole
-    4300106: _gearMinuteCollider
-    4300108: ___
-    4300110: gearHourCollider
     7400000: Default Take
     9500000: //RootNode
   materials:

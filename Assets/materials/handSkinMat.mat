@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Hand_skin_mat
+  m_Name: handSkinMat
   m_Shader: {fileID: 4800000, guid: d20aeb528863d684c8e8a861671b3b15, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
