@@ -10,31 +10,65 @@ ModelImporter:
     100004: doorFrame_001
     100006: endDoor
     100008: keyHole
-    100010: portal
+    100010: portalMask2
+    100012: portalMaskOuter
+    100014: stars
+    100016: stars2
+    100018: threshold
+    100020: portalMask
+    100022: Cube
+    100024: portalMask3
     400000: //RootNode
     400002: doorFrame
     400004: doorFrame_001
     400006: endDoor
     400008: keyHole
-    400010: portal
+    400010: portalMask2
+    400012: portalMaskOuter
+    400014: stars
+    400016: stars2
+    400018: threshold
+    400020: portalMask
+    400022: Cube
+    400024: portalMask3
     2300000: //RootNode
     2300002: doorFrame
     2300004: doorFrame_001
     2300006: endDoor
     2300008: keyHole
-    2300010: portal
+    2300010: portalMask2
+    2300012: portalMaskOuter
+    2300014: stars
+    2300016: stars2
+    2300018: threshold
+    2300020: portalMask
+    2300022: Cube
+    2300024: portalMask3
     3300000: //RootNode
     3300002: doorFrame
     3300004: doorFrame_001
     3300006: endDoor
     3300008: keyHole
-    3300010: portal
+    3300010: portalMask2
+    3300012: portalMaskOuter
+    3300014: stars
+    3300016: stars2
+    3300018: threshold
+    3300020: portalMask
+    3300022: Cube
+    3300024: portalMask3
     4300000: Cube
     4300002: doorFrame
     4300004: doorFrame_001
     4300006: endDoor
-    4300008: keyHole
-    4300010: portal
+    4300008: stars2
+    4300010: portalMask2
+    4300012: portalMaskOuter
+    4300014: stars
+    4300016: keyHole
+    4300018: threshold
+    4300020: portalMask
+    4300022: portalMask3
     7400000: Default Take
     9500000: //RootNode
   materials:

@@ -45,13 +45,10 @@ public class ControllerDemoManager : MonoBehaviour
         character.SetActive(true);
         GameObject.Find("towerInterior").SetActive(false);
 
-        if ( UnityEngine.SceneManagement.SceneManager.sceneCount < 2 )
+        if ( false && UnityEngine.SceneManagement.SceneManager.sceneCount < 2 )
         {
-            //Debug.Log("Scenea loaded: " + UnityEngine.SceneManagement.SceneManager.sceneCount);
             UnityEngine.SceneManagement.SceneManager.LoadScene("endScene", UnityEngine.SceneManagement.LoadSceneMode.Additive);
         }
-
-        //StartCoroutine(setupCameras(10f));
     }
 
     private IEnumerator setupCameras(float time)
