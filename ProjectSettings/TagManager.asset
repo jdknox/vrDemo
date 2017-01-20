@@ -24,8 +24,8 @@ TagManager:
   - noCollision
   - key
   - stonePlate
-  - portalR
-  - portalL
+  - portal
+  - endDoor
   - 
   - 
   - 

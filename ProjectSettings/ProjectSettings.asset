@@ -28,7 +28,7 @@ PlayerSettings:
   m_MobileMTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
-  androidShowActivityIndicatorOnLoading: 0
+  androidShowActivityIndicatorOnLoading: 2
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
@@ -37,7 +37,7 @@ PlayerSettings:
   allowedAutorotateToLandscapeRight: 0
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
-  use32BitDisplayBuffer: 0
+  use32BitDisplayBuffer: 1
   disableDepthAndStencilBuffers: 0
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
@@ -95,7 +95,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: net.knoxar.jeffknox.vrdemo
-  bundleVersion: 0.2.3
+  bundleVersion: 0.3.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   xboxOneDisableKinectGpuReservation: 0
@@ -106,7 +106,7 @@ PlayerSettings:
       useSustainedPerformanceMode: 1
   vrSplashScreenShouldntTagAlong: 0
   protectGraphicsMemory: 0
-  AndroidBundleVersionCode: 203
+  AndroidBundleVersionCode: 300
   AndroidMinSdkVersion: 24
   AndroidPreferredInstallLocation: 1
   aotOptions: 
