@@ -1414,7 +1414,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100106, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: interactable
       objectReference: {fileID: 0}
     - target: {fileID: 100106, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_Layer
@@ -2965,6 +2965,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endDoor: {fileID: 1159492227}
+--- !u!135 &570549404
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570549399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: -7.2270523e-12, y: -0.00024249963, z: 7.0576683e-15}
 --- !u!1001 &579032846
 Prefab:
   m_ObjectHideFlags: 0
@@ -6508,10 +6520,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1616350216}
-  m_LocalRotation: {x: 0, y: 0.40162817, z: 0, w: 0.91580284}
-  m_LocalPosition: {x: -4.245, y: 0.042, z: 10.437}
+  m_LocalRotation: {x: -0, y: 0.9813531, z: -0, w: 0.19221364}
+  m_LocalPosition: {x: -6.24, y: 0.95, z: -0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 47.36, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 158.08101, z: 0}
   m_Children:
   - {fileID: 1612861717}
   - {fileID: 1741037407}

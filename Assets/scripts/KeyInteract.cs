@@ -30,8 +30,8 @@ public class KeyInteract : ObjectInteract
         lightmapIndex = LightmapSettings.lightmaps.Length - 1; //stonePlateRenderer.lightmapIndex;
         for (int i = 0; i < 4; i++)
         {
-            bakedScaleOffset[i] = PlayerPrefs.GetFloat("lightBaking_stonePlate" + "_" + i);
-            Debug.Log("lightBaking_stonePlate" + "_" + i + " = " + bakedScaleOffset[i]);
+            bakedScaleOffset[i] = PlayerPrefs.GetFloat("lightBaking_stonePlate_" + i);
+            ///Debug.Log("lightBaking_stonePlate_" + i + " = " + bakedScaleOffset[i]);
         }
         
         // remove lightmap until the key is collected
@@ -68,12 +68,12 @@ public class KeyInteract : ObjectInteract
         
     }
 
-    // "unlight" stone: change texture to plain stone and put the lightmap back
+    // "unlight" stone: change texture to plain stone and put the original lightmap back
     public void removeKeyLight()
     {
         stonePlateRenderer.lightmapIndex = lightmapIndex;
 
-        stonePlateRenderer.lightmapScaleOffset = bakedScaleOffset;//new Vector4(0.05517578125f, 0.05517578125f, 0.1923828125f, 0.771484375f);
+        stonePlateRenderer.lightmapScaleOffset = bakedScaleOffset;
         stonePlateRenderer.material.mainTexture = stonePlate.stonePlateUnlitTexture;
     }
 
@@ -82,7 +82,6 @@ public class KeyInteract : ObjectInteract
         GetComponent<Rigidbody>().isKinematic = false;
         gameObject.tag = "interactable";
         stonePlateRenderer.material.mainTexture = stonePlate.stonePlateKeyTexture;
-        ///keyDropAudio.PlayDelayed(0.6f);
     }
 
     private void interact()

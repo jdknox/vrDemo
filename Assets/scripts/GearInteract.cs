@@ -75,3 +75,8 @@ public class GearInteract : ObjectInteract {
         // Debug.Log("angluar velocity " + currentAngularVelocity.ToString());
     }
 }
+
+/*
+KeyInteract keyInteract = GameObject.FindObjectOfType(typeof(KeyInteract)) as KeyInteract;
+keyInteract.dropKey();
+ */
