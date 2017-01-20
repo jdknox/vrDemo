@@ -4,18 +4,18 @@ using System.Collections;
 public class GearInteract : ObjectInteract {
 
     public GameObject stonePlate;
-
     private TowerTrigger towerTrigger;
     private KeyInteract keyInteract;
+    private GearRetract gearRetract;
     private GameObject playerHand;
-
+    
+    // for rotation
     private Vector3 beginInteractVector;
     private Vector3 hingeAxis;
     private Quaternion beginOrientation;
     private Quaternion endOrientation;
-
     private float currentAngularVelocity;
-
+    
 	// Use this for initialization
 	void Awake () {
         playerHand = GameObject.FindGameObjectWithTag("playerHand");
@@ -23,6 +23,7 @@ public class GearInteract : ObjectInteract {
 
         towerTrigger = GameObject.FindObjectOfType(typeof(TowerTrigger)) as TowerTrigger;
         keyInteract = GameObject.FindObjectOfType(typeof(KeyInteract)) as KeyInteract;
+        gearRetract = GameObject.FindObjectOfType(typeof(GearRetract)) as GearRetract;
     }
 
     void OnEnable()
@@ -34,7 +35,7 @@ public class GearInteract : ObjectInteract {
 
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 
     public override void register()
@@ -53,6 +54,7 @@ public class GearInteract : ObjectInteract {
 
         if( towerTrigger.checkClockTime() )
         {
+            gearRetract.retractGears();
             keyInteract.dropKey();
         }
     }

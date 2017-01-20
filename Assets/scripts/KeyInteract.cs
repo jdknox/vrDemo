@@ -6,6 +6,7 @@ public class KeyInteract : ObjectInteract
 {
 
     public StonePlate stonePlate;
+    public GvrAudioSource keyDropAudio;
 
     private GameObject playerHand;
     //private GameObject stonePlate;
@@ -42,6 +43,12 @@ public class KeyInteract : ObjectInteract
 	
 	}
 
+    void OnCollisionEnter(Collision collision)
+    {
+        keyDropAudio.Play();
+
+    }
+
     public override void register()
     {
         HandInteraction.onInteract += interact;
@@ -75,6 +82,7 @@ public class KeyInteract : ObjectInteract
         GetComponent<Rigidbody>().isKinematic = false;
         gameObject.tag = "interactable";
         stonePlateRenderer.material.mainTexture = stonePlate.stonePlateKeyTexture;
+        ///keyDropAudio.PlayDelayed(0.6f);
     }
 
     private void interact()
