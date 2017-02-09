@@ -6,41 +6,50 @@ public class KeyInteract : ObjectInteract
 {
 
     public StonePlate stonePlate;
+    public GvrAudioSource keyDropAudio;
+    //#public LightmapManager lightmapManager;
 
     private GameObject playerHand;
     //private GameObject stonePlate;
     private Renderer stonePlateRenderer;
     private int lightmapIndex;
-    private Vector4 bakedScaleOffset;
 
     // Use this for initialization
-    void Awake () {
+    void Awake ()
+    {
         playerHand = GameObject.FindGameObjectWithTag("playerHand");
         stonePlateRenderer = stonePlate.GetComponent<Renderer>();
-        //stonePlate = _stonePlate.GetComponent<StonePlate>();
+        //#lightmapManager = GetComponent<LightmapManager>();
 
-        List<LightmapData> lm = new List<LightmapData>(LightmapSettings.lightmaps);
-        LightmapData newLightmap = new LightmapData();
-        newLightmap.lightmapFar = stonePlate.unlitLightMap;
-        lm.Add(newLightmap);
-        LightmapSettings.lightmaps = lm.ToArray();
+        pushLightmap(stonePlate.unlitLightmap);
 
-        // save lightmap index for later
-        lightmapIndex = LightmapSettings.lightmaps.Length - 1; //stonePlateRenderer.lightmapIndex;
-        for (int i = 0; i < 4; i++)
-        {
-            bakedScaleOffset[i] = PlayerPrefs.GetFloat("lightBaking_stonePlate" + "_" + i);
-            Debug.Log("lightBaking_stonePlate" + "_" + i + " = " + bakedScaleOffset[i]);
-        }
-        
         // remove lightmap until the key is collected
         stonePlateRenderer.lightmapIndex = -1;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private int pushLightmap(Texture2D lightmap)
+    {
+        // add new lightmap to LightmapSettings.lightmaps array
+        List<LightmapData> lm = new List<LightmapData>(LightmapSettings.lightmaps);
+        LightmapData newLightmap = new LightmapData();
+        newLightmap.lightmapFar = lightmap;
+        lm.Add(newLightmap);
+        LightmapSettings.lightmaps = lm.ToArray();
+
+        // return new lightmap index
+        return LightmapSettings.lightmaps.Length - 1;
+    }
+
+    // Update is called once per frame
+    void Update () {
 	
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        keyDropAudio.Play();
+
+    }
 
     public override void register()
     {
@@ -61,12 +70,14 @@ public class KeyInteract : ObjectInteract
         
     }
 
-    // "unlight" stone: change texture to plain stone and put the lightmap back
+    // "unlight" stone: change texture to plain stone and put the original lightmap back
     public void removeKeyLight()
     {
         stonePlateRenderer.lightmapIndex = lightmapIndex;
 
-        stonePlateRenderer.lightmapScaleOffset = bakedScaleOffset;//new Vector4(0.05517578125f, 0.05517578125f, 0.1923828125f, 0.771484375f);
+        Vector4 bakedScaleOffset = LightmapManager.loadVector("lightBaking_stonePlate_");
+
+        stonePlateRenderer.lightmapScaleOffset = bakedScaleOffset;
         stonePlateRenderer.material.mainTexture = stonePlate.stonePlateUnlitTexture;
     }
 

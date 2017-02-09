@@ -27,9 +27,8 @@ public class DoorInteract : ObjectInteract {
     private void open()
     {
         doorBody.isKinematic = false;
-        //Debug.Log(GameObject.Find("towerInterior"));
+        
         towerInterior.SetActive(true);
         towerInterior.GetComponent<MeshRenderer>().enabled = true;
-        
     }
 }

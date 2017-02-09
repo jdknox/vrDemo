@@ -41,8 +41,10 @@ build/*
 !build/jeff_knox_vr_demo.apk
 archive/
 images/
+raw_audio/
 Assets/audio/*_data
 Assets/Plugins
 Lightmap-*.exr*
 debug.log
 *.a
+*.ogg

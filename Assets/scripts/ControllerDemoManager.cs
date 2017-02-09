@@ -45,13 +45,10 @@ public class ControllerDemoManager : MonoBehaviour
         character.SetActive(true);
         GameObject.Find("towerInterior").SetActive(false);
 
-        if ( UnityEngine.SceneManagement.SceneManager.sceneCount < 2 )
+        if ( false && UnityEngine.SceneManagement.SceneManager.sceneCount < 2 )
         {
-            //Debug.Log("Scenea loaded: " + UnityEngine.SceneManagement.SceneManager.sceneCount);
             UnityEngine.SceneManagement.SceneManager.LoadScene("endScene", UnityEngine.SceneManagement.LoadSceneMode.Additive);
         }
-
-        //StartCoroutine(setupCameras(10f));
     }
 
     private IEnumerator setupCameras(float time)
@@ -115,8 +112,8 @@ public class ControllerDemoManager : MonoBehaviour
                 //debugInfo.outsideText += "final move speed: " + moveVector.magnitude.ToString() + "\n";
 
             var oldY = character.transform.position.y;
-            character.transform.position += playerCamera.transform.right * moveVector.x;
-            character.transform.position += playerCamera.transform.forward * moveVector.y;
+            character.transform.position += playerCamera.transform.right * moveVector.x / fudgeFactor;
+            character.transform.position += playerCamera.transform.forward * moveVector.y * fudgeFactor;
             character.transform.position = new Vector3(character.transform.position.x, oldY, character.transform.position.z);
         }
 

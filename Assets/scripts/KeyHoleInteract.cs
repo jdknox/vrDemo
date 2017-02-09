@@ -20,7 +20,7 @@ public class KeyHoleInteract : ObjectInteract
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("keyhole collide: " + other.name);
+        ///Debug.Log("keyhole collide: " + other.name);
         if ( other.name == "key" )
         {
             keyInRange = true;
