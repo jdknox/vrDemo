@@ -11,13 +11,13 @@ The [latest](https://github.com/jdknox/vrDemo/blob/master/build/jeff_knox_vr_dem
 
 # Motivation
 The future of Virtual Reality looks bright, and this project was started with the intent to build a VR game from scratch.  The main goal is to create a demo from the ground up to determine the challenges and potential solutions that arise in this relatively new medium.  One of the goals of this particular project is to find intuitive ways for the player to interact with the environment through a virtual hand.  These interactions include grabbing/interacting with objects (see Fig's. 1 and 2), rotating objects around an axis that is perpendicular to the player (see Fig. 3), and rotation around a parallel axis (work in progress).
-###### Figure 1. Example of opening a door
+###### Figure 1. Opening a door
 ![door opening example][door_opening]
 
-###### Figure 2. Example of grabbing an object
+###### Figure 2. Grabbing an object
 ![object grabbing example][object_grab]
 
-###### Figure 3. Example of rotation about perpendicular axis
+###### Figure 3. Rotation about perpendicular axis
 ![gear rotation example][gear_rotation]
 
 In addition, problems typical to any programming project--and in particular a computer game--are sure to crop up.  So, creating this demo also serves as a study into producing a game from start to finish, including appropriate user feedback, optimization and debugging.
