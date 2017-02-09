@@ -303,6 +303,17 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100106, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
   m_PrefabInternal: {fileID: 172096608}
+--- !u!114 &117795901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117795900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0185b586986389b40a3f9604b351a5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &117795904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,7 +1631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
-      value: 2048
+      value: 67584
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_LocalScale.y
@@ -2403,6 +2414,17 @@ Light:
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
   m_PrefabInternal: {fileID: 1224441016}
+--- !u!114 &413812098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413812097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0185b586986389b40a3f9604b351a5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &413812101
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2550,7 +2572,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
-      value: 2048
+      value: 67584
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_LocalScale.y
@@ -3380,7 +3402,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
-      value: 2048
+      value: 67584
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_LocalScale.y
@@ -3638,7 +3660,7 @@ MonoBehaviour:
     type: 3}
   stonePlateKeyTexture: {fileID: 2800000, guid: d166eea1a8cb01448a9b7990a79694d2,
     type: 3}
-  unlitLightMap: {fileID: 2800000, guid: be6cc726112a0ea47bf35db98eaf94c5, type: 3}
+  unlitLightmap: {fileID: 2800000, guid: be6cc726112a0ea47bf35db98eaf94c5, type: 3}
 --- !u!65 &734987155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5138,6 +5160,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0.005
       objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
   m_IsPrefabParent: 0
@@ -5244,7 +5270,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
-      value: 2048
+      value: 67584
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 2}
       propertyPath: m_LocalScale.y

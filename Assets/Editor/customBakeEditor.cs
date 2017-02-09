@@ -15,6 +15,7 @@ public class CustomBakeEditor : EditorWindow
     const string BAKED_OBJECTS = "bakedObjects";
     private static bool safeToShow = true;
     private static int crazy = 0;
+    private string updatedSettings = "N/A";
     //private ArrayList unhideMeshes = new ArrayList { "towerInterior" };
 
     [MenuItem("Window/Custom Bake")]
@@ -24,8 +25,17 @@ public class CustomBakeEditor : EditorWindow
         EditorWindow.GetWindow<CustomBakeEditor>();
     }
 
+    public bool allowBaking()
+    {
+        return SceneManager.GetActiveScene().name == "lightBakingScene";
+    }
+
     void OnEnable()
     {
+        if (!allowBaking())
+        {
+            return;
+        }
         bakedObjects = new List<GameObject>();
         inactiveObjects = new List<string>();
         this.autoRepaintOnSceneChange = true;
@@ -52,18 +62,26 @@ public class CustomBakeEditor : EditorWindow
 
     void OnDisable()
     {
+        // only save the objects to back if we're in the light baking scene
+        if ( !allowBaking() )
+        {
+            Debug.Log("inside light baking scene");
+            return;
+        }
         string bakedObjectsString = gameObjectsToString() + ",";
         bakedObjectsString += string.Join(",", inactiveObjects.ToArray());
+
         EditorPrefs.SetString(BAKED_OBJECTS, bakedObjectsString);
         Debug.Log("saving: '" + bakedObjectsString + "'\n count: " + bakedObjects.Count);
     }
 
     void OnHierarchyChange()
     {
+        // close and reopen window if anything changes, forced refresh
         if (safeToShow)
         {
             this.Close();
-            safeToShow = false;
+            safeToShow = false;     // mutex of sorts, to allow window to update, but not in an infinite loop
             CustomBakeEditor.ShowWindow();
         } else {
             safeToShow = true;
@@ -77,15 +95,22 @@ public class CustomBakeEditor : EditorWindow
     
     void OnGUI()
     {
+        if (!allowBaking())
+        {
+            GUILayout.Label("Disabled except for light baking scene.", EditorStyles.boldLabel);
+            return;
+        }
+
         GUILayout.Label("Lights to hide during baking", EditorStyles.boldLabel);
         lightToIgnore = (GameObject)EditorGUI.ObjectField(new Rect(3, 24, position.width - 6, 20), "Light to Ignore", lightToIgnore, typeof(GameObject), true);
         
         GUILayout.Space(20);
         GUILayout.Label("Objects for custom lightmap", EditorStyles.boldLabel);
-        //Rect rect = EditorGUILayout.BeginVertical();
+
         if ( bakedObjects != null )
         {
             ///Debug.Log("number of baked objects: " + bakedObjects.Count);
+            /// Populate window with GameObjects to bake
             for (int i = 0; i < bakedObjects.Count; i++)
             {
                 bakedObjects[i] = (GameObject)EditorGUILayout.ObjectField("Object " + i, bakedObjects[i], typeof(GameObject), true);
@@ -101,12 +126,18 @@ public class CustomBakeEditor : EditorWindow
             {
                 bakedObjects.Add((GameObject)EditorGUILayout.ObjectField("_", null, typeof(GameObject), true));
             }
+
+            /// Save the scaleOffsets for each active baked object
+            if ( GUILayout.Button("Save offsets") )
+            {
+                updatedSettings = updateBakedObjectOffsets();
+            Debug.Log(updatedSettings);
+            }
+            EditorGUILayout.SelectableLabel(updatedSettings);
         }
-        //EditorGUILayout.EndVertical();
 
         GUILayout.Space(20);
 
-        //bakeSelected = EditorGUILayout.Toggle("Bake Selected Only", bakeSelected);
         if ( GUILayout.Button("Build Lighting") )
         {
             if (lightToIgnore)
@@ -128,26 +159,21 @@ public class CustomBakeEditor : EditorWindow
             lightToIgnore.GetComponent<Light>().enabled = true;
         }
 
-        if ( SceneManager.GetActiveScene().name == "lightBakingScene" )
-        {
-            updateBakedObjectOffsets();
-        }
-
         Lightmapping.completed -= onFinishBake;
         Debug.Log("FINISHED BAKING");
     }
 
-    void updateBakedObjectOffsets()
+    string updateBakedObjectOffsets()
     {
+        string updatedSettings = "";
+
+        /// TODO: update this to use the game objects provided by the GUI above
         GameObject currentGameObject = GameObject.Find("lightBaking_stonePlate");
         if ( currentGameObject )
         {
             var offset = currentGameObject.GetComponent<Renderer>().lightmapScaleOffset;
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerPrefs.SetFloat(currentGameObject.name + "_" + i, offset[i]);
-                Debug.Log(currentGameObject.name + "_" + i + " = " + offset[i]);
-            }
+            updatedSettings += LightmapManager.saveVector(currentGameObject.name, offset);
         }
+        return updatedSettings;
     }
 }

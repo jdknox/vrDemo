@@ -1440,7 +1440,7 @@ MonoBehaviour:
     type: 3}
   stonePlateKeyTexture: {fileID: 2800000, guid: d166eea1a8cb01448a9b7990a79694d2,
     type: 3}
-  unlitLightMap: {fileID: 0}
+  unlitLightmap: {fileID: 0}
 --- !u!65 &1425999247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1472,7 +1472,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 2
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
