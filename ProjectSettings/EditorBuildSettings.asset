@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/scenes/mainScene.unity
   - enabled: 0
     path: Assets/scenes/endScene.unity
+  - enabled: 0
+    path: Assets/scenes/prototypingScene.unity

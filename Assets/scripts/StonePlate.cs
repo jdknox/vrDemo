@@ -7,11 +7,13 @@ public class StonePlate : MonoBehaviour {
     public Texture stonePlateKeyTexture;
     public Texture2D unlitLightmap;
 
+    public Vector4 unlitBakedLightmapScaleOffset;
+
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
 
-       }
+    }
 	
 	// Update is called once per frame
 	void Update () {

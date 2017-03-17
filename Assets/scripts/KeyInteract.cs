@@ -7,7 +7,7 @@ public class KeyInteract : ObjectInteract
 
     public StonePlate stonePlate;
     public GvrAudioSource keyDropAudio;
-    //#public LightmapManager lightmapManager;
+    //public LightmapManager lightmapManager;
 
     private GameObject playerHand;
     //private GameObject stonePlate;
@@ -21,7 +21,7 @@ public class KeyInteract : ObjectInteract
         stonePlateRenderer = stonePlate.GetComponent<Renderer>();
         //#lightmapManager = GetComponent<LightmapManager>();
 
-        pushLightmap(stonePlate.unlitLightmap);
+        lightmapIndex = pushLightmap(stonePlate.unlitLightmap);
 
         // remove lightmap until the key is collected
         stonePlateRenderer.lightmapIndex = -1;
@@ -75,9 +75,8 @@ public class KeyInteract : ObjectInteract
     {
         stonePlateRenderer.lightmapIndex = lightmapIndex;
 
-        Vector4 bakedScaleOffset = LightmapManager.loadVector("lightBaking_stonePlate_");
-
-        stonePlateRenderer.lightmapScaleOffset = bakedScaleOffset;
+        //Vector4 bakedScaleOffset = LightmapManager.loadVector("lightBaking_stonePlate_");
+        //stonePlateRenderer.lightmapScaleOffset = stonePlate.unlitBakedLightmapScaleOffset;
         stonePlateRenderer.material.mainTexture = stonePlate.stonePlateUnlitTexture;
     }
 

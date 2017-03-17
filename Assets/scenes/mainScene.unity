@@ -1013,7 +1013,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400072, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100072, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1409,7 +1409,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400108, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100110, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1473,7 +1473,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400112, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
@@ -2425,6 +2425,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0185b586986389b40a3f9604b351a5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &413812099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413812097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597977f0a2dd10446a236f1f07f9071c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lightmapIndex: 2
+  lightmapScaleOffset: {x: 0.12061987, y: 0.12061987, z: 0.76872855, w: 0.31910342}
+  lightmapPixelOffset: {x: 1574.3561, y: 653.5238}
+  m_getLightmapValues: 0
+  m_setLightmapValues: 0
+  m_lightmapArray: []
+  m_setLightmapArray: 0
+  pythonCodeSource: "\n    'doorFrame': {\n        'source': (0.1206199, 0.7687286,
+    0.3191034),\n        'destination': ()\n    },"
+  pythonCodeDestination: 0.1206199, 0.7687286, 0.3191034
 --- !u!64 &413812101
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2987,6 +3008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endDoor: {fileID: 1159492227}
+  doorFrame: {fileID: 413812097}
 --- !u!135 &570549404
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3661,6 +3683,27 @@ MonoBehaviour:
   stonePlateKeyTexture: {fileID: 2800000, guid: d166eea1a8cb01448a9b7990a79694d2,
     type: 3}
   unlitLightmap: {fileID: 2800000, guid: be6cc726112a0ea47bf35db98eaf94c5, type: 3}
+  unlitBakedLightmapScaleOffset: {x: 0.11911467, y: 0.11911467, z: 0.56622285, w: -0.0009312111}
+--- !u!114 &734987153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 734987151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597977f0a2dd10446a236f1f07f9071c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lightmapIndex: 2
+  lightmapScaleOffset: {x: 0.054492254, y: 0.054492254, z: -0.00042600793, w: 0.5650037}
+  lightmapPixelOffset: {x: -0.87246424, y: 1157.1276}
+  m_getLightmapValues: 0
+  m_setLightmapValues: 0
+  m_lightmapArray: []
+  m_setLightmapArray: 0
+  pythonCodeSource: 
+  pythonCodeDestination: 
 --- !u!65 &734987155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4753,7 +4796,7 @@ Rigidbody:
   m_Drag: 1
   m_AngularDrag: 0.1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5163,6 +5206,42 @@ Prefab:
     - target: {fileID: 100014, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300012, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300012, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300012, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_MotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300020, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300020, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300020, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_MotionVectors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300014, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300014, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300014, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}
+      propertyPath: m_MotionVectors
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1f2dc5f4b151c8449ad0de72137e2a1, type: 3}

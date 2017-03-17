@@ -4,13 +4,15 @@ using System.Collections;
 public class KeyHoleInteract : ObjectInteract
 {
     public GameObject endDoor;
+    public GameObject doorFrame;
 
     private bool keyInRange = false;
     private GameObject key;
+    private Renderer doorFrameRenderer;
 
 	// Use this for initialization
 	void Awake () {
-	    
+        doorFrameRenderer = doorFrame.GetComponent<Renderer>();
 	}
 	
 	// Update is called once per frame
@@ -26,6 +28,10 @@ public class KeyHoleInteract : ObjectInteract
             keyInRange = true;
             key = other.gameObject;
         }
+        else
+        {
+            doorFrameRenderer.lightmapIndex = 7;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -33,6 +39,10 @@ public class KeyHoleInteract : ObjectInteract
         if (other.name == "key")
         {
             keyInRange = false;
+        }
+        else
+        {
+            doorFrameRenderer.lightmapIndex = 0;
         }
     }
 

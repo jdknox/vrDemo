@@ -4,12 +4,15 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Linq;
 
+using LightmapType = UnityEngine.Texture2D;
+
 public class CustomBakeEditor : EditorWindow
 {
-
     [SerializeField]
     public GameObject lightToIgnore;
+    [SerializeField]
     public List<GameObject> bakedObjects;
+    public Dictionary<GameObject, LightmapType> bakedObjectLightmaps = new Dictionary<GameObject, LightmapType>();
 
     private List<string> inactiveObjects;
     const string BAKED_OBJECTS = "bakedObjects";
@@ -36,6 +39,7 @@ public class CustomBakeEditor : EditorWindow
         {
             return;
         }
+
         bakedObjects = new List<GameObject>();
         inactiveObjects = new List<string>();
         this.autoRepaintOnSceneChange = true;
@@ -48,16 +52,27 @@ public class CustomBakeEditor : EditorWindow
                 if (gameObj)
                 {
                     bakedObjects.Add(gameObj);
+                    bakedObjectLightmaps.Add(gameObj, getLightmap(gameObj));
                 }
                 else
                 {
                     inactiveObjects.Add(objectString);
                 }
-                
+
                 ///Debug.Log("loading " + gameObj + "\nnew count: " + bakedObjects.Count);
+                Debug.Log(bakedObjectLightmaps);
             }
         }
         ///Debug.Log("inactive objects: " + string.Join(",", inactiveObjects.ToArray()));
+    }
+
+    private static Texture2D getLightmap(GameObject gameObj)
+    {
+        if (!gameObj)
+            return null;
+
+        int lightmapIndex = gameObj.GetComponent<Renderer>().lightmapIndex;
+        return LightmapSettings.lightmaps[lightmapIndex].lightmapFar;
     }
 
     void OnDisable()
@@ -75,13 +90,13 @@ public class CustomBakeEditor : EditorWindow
         Debug.Log("saving: '" + bakedObjectsString + "'\n count: " + bakedObjects.Count);
     }
 
-    void OnHierarchyChange()
+    void _OnHierarchyChange()
     {
         // close and reopen window if anything changes, forced refresh
         if (safeToShow)
         {
             this.Close();
-            safeToShow = false;     // mutex of sorts, to allow window to update, but not in an infinite loop
+            safeToShow = false;     // mutex of sorts to allow window to update, but not in an infinite loop
             CustomBakeEditor.ShowWindow();
         } else {
             safeToShow = true;
@@ -113,8 +128,21 @@ public class CustomBakeEditor : EditorWindow
             /// Populate window with GameObjects to bake
             for (int i = 0; i < bakedObjects.Count; i++)
             {
-                bakedObjects[i] = (GameObject)EditorGUILayout.ObjectField("Object " + i, bakedObjects[i], typeof(GameObject), true);
+                EditorGUILayout.BeginHorizontal();
+                {
+                    bakedObjects[i] = (GameObject)EditorGUILayout.ObjectField("Object " + i, bakedObjects[i], typeof(GameObject), true);
+                    //Debug.Log("bakedObjects[" + i + "]: " + bakedObjects[i]);
+                    if ( bakedObjects[i] )
+                    {
+                        if (bakedObjectLightmaps.ContainsKey(bakedObjects[i]))
+                            EditorGUILayout.ObjectField("Lightmap " + i, bakedObjectLightmaps[bakedObjects[i]], typeof(LightmapType), true);
+                        else
+                            bakedObjectLightmaps.Add(bakedObjects[i], getLightmap(bakedObjects[i]));
+                    }
+                }
+                EditorGUILayout.EndHorizontal();
             }
+
             EditorGUILayout.BeginHorizontal();
             {
                 EditorGUILayout.PrefixLabel("Inactive Objects");
@@ -122,11 +150,14 @@ public class CustomBakeEditor : EditorWindow
             }
             EditorGUILayout.EndHorizontal();
 
+            //EditorGUI.BeginChangeCheck();
             if ( GUILayout.Button("Add") )
             {
-                bakedObjects.Add((GameObject)EditorGUILayout.ObjectField("_", null, typeof(GameObject), true));
+                GameObject newObject = (GameObject)EditorGUILayout.ObjectField("_", null, typeof(GameObject), true);
+                bakedObjects.Add(newObject);
+                this.Repaint();
             }
-
+        
             /// Save the scaleOffsets for each active baked object
             if ( GUILayout.Button("Save offsets") )
             {
@@ -169,9 +200,15 @@ public class CustomBakeEditor : EditorWindow
 
         /// TODO: update this to use the game objects provided by the GUI above
         GameObject currentGameObject = GameObject.Find("lightBaking_stonePlate");
+        StonePlate stonePlate = GameObject.Find("stonePlate").GetComponent<StonePlate>();
+
         if ( currentGameObject )
         {
             var offset = currentGameObject.GetComponent<Renderer>().lightmapScaleOffset;
+            //currentGameObject.unlitBakedLightmapScaleOffset = offset;
+
+            stonePlate.unlitBakedLightmapScaleOffset = offset;
+            // Debug.Log(plate.unlitBakedLightmapScaleOffset);
             updatedSettings += LightmapManager.saveVector(currentGameObject.name, offset);
         }
         return updatedSettings;
