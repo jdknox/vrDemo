@@ -18,6 +18,7 @@ obj/
 *.user
 *.unityproj
 *.booproj
+gvrUnityWin.VC.*
 
 # ============ #
 # OS generated #
