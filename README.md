@@ -1,4 +1,4 @@
-# gvrDemo 0.2.1 alpha
+# gvrDemo 0.4.1 beta
 Google Daydream demo app using Unity 5.4
 
 This is a simple Daydream app created to showcase the technical skills necessary for producing an interactive VR world.
@@ -10,7 +10,7 @@ The [latest](https://github.com/jdknox/vrDemo/blob/master/build/jeff_knox_vr_dem
 
 
 # Motivation
-The future of Virtual Reality looks bright, and this project was started with the intent to build a VR game from scratch.  The main goal is to create a demo from the ground up to determine the challenges and potential solutions that arise in this relatively new medium.  One of the goals of this particular project is to find intuitive ways for the player to interact with the environment through a virtual hand.  These interactions include grabbing/interacting with objects (see Fig's. 1 and 2), rotating objects around an axis that is perpendicular to the player (see Fig. 3), and rotation around a parallel axis (work in progress).
+The future of Virtual Reality looks bright, and this project was started with the intent to build a VR game from scratch.  The main goal is to create a demo from the ground up to determine the challenges and potential solutions that arise in this relatively new medium.  One of the goals of this particular project is to find intuitive ways for the player to interact with the environment through a virtual hand.  These interactions include grabbing/interacting with objects (see Fig's. 1 and 2), rotating objects around an axis that is perpendicular to the player's forward direction (see Fig. 3), and rotation around a parallel axis (like a safe dial; work in progress).
 ###### Figure 1. Opening a door
 ![door opening example][door_opening]
 
