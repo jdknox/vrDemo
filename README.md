@@ -5,25 +5,21 @@ This is a simple Daydream app created to showcase the technical skills necessary
 
 The [latest](https://github.com/jdknox/vrDemo/blob/master/build/jeff_knox_vr_demo.apk) Android version can be found in the [build](https://github.com/jdknox/vrDemo/tree/master/build) folder.
 
-![overview of game island][island_01]
-[island_01]: https://github.com/jdknox/vrDemo/blob/document/docs/img/island_01.jpg "Overview of island"
+![overview of game island](docs/img/island_01.jpg?raw=true "Overview of island")
 
 
 # Motivation
 The future of Virtual Reality looks bright, and this project was started with the intent to build a VR game from scratch.  The main goal is to create a demo from the ground up to determine the challenges and potential solutions that arise in this relatively new medium.  One of the goals of this particular project is to find intuitive ways for the player to interact with the environment through a virtual hand.  These interactions include grabbing/interacting with objects (see Fig's. 1 and 2), rotating objects around an axis that is perpendicular to the player's forward direction (see Fig. 3), and rotation around a parallel axis (like a safe dial; work in progress).
 ###### Figure 1. Opening a door
-![door opening example][door_opening]
+![door opening example](docs/img/door_opening.jpg?raw=true "Opening a door")
 
 ###### Figure 2. Grabbing an object
-![object grabbing example][object_grab]
+![object grabbing example](docs/img/cube_grab.gif?raw=true "Grabbing a cube")
 
 ###### Figure 3. Rotation about perpendicular axis
-![gear rotation example][gear_rotation]
+![gear rotation example](docs/img/gear_rotation.gif "Rotation about perpendicular axis")
 
 In addition, problems typical to any programming project--and in particular a computer game--are sure to crop up.  So, creating this demo also serves as a study into producing a game from start to finish, including appropriate user feedback, optimization and debugging.
-[door_opening]: https://github.com/jdknox/vrDemo/blob/document/docs/img/door_opening.jpg "Opening a door"
-[object_grab]: https://github.com/jdknox/vrDemo/blob/document/docs/img/cube_grab.gif "Grabbing a cube"
-[gear_rotation]: https://github.com/jdknox/vrDemo/blob/document/docs/img/gear_rotation.gif "Rotation about perpendicular axis"
 
 
 # Running the demo
