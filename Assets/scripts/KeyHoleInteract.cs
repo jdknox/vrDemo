@@ -27,10 +27,10 @@ public class KeyHoleInteract : ObjectInteract
         {
             keyInRange = true;
             key = other.gameObject;
+            doorFrameRenderer.lightmapIndex = 7;
         }
         else
         {
-            doorFrameRenderer.lightmapIndex = 7;
         }
     }
 
@@ -39,10 +39,8 @@ public class KeyHoleInteract : ObjectInteract
         if (other.name == "key")
         {
             keyInRange = false;
-        }
-        else
-        {
-            doorFrameRenderer.lightmapIndex = 0;
+            if (key.transform.parent != this.transform)     // don't remove lightmap if key is in place
+                doorFrameRenderer.lightmapIndex = 0;
         }
     }
 
@@ -64,8 +62,10 @@ public class KeyHoleInteract : ObjectInteract
             key.transform.parent = this.transform;
             key.transform.localPosition = Vector3.zero;
             key.transform.localRotation = Quaternion.identity;
+            key.tag = "Untagged";
 
             endDoor.GetComponent<Rigidbody>().isKinematic = false;
+            doorFrameRenderer.lightmapIndex = 7;
         }
     }
 }

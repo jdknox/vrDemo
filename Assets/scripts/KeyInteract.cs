@@ -60,7 +60,9 @@ public class KeyInteract : ObjectInteract
         transform.parent = playerHand.transform;
         transform.localPosition = Vector3.back * 4.0f;
         transform.localRotation = Quaternion.identity;
-        GetComponent<BoxCollider>().isTrigger = true;
+
+        GetComponent<SphereCollider>().enabled = false;     // turn off so it doesn't interfere with box trigger
+        GetComponent<BoxCollider>().isTrigger = true;       // trigger for keyhole
 
         removeKeyLight();
     }

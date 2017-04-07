@@ -800,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1002901283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,6 +1447,7 @@ GameObject:
   - 23: {fileID: 1425999248}
   - 65: {fileID: 1425999247}
   - 114: {fileID: 1425999246}
+  - 114: {fileID: 1425999250}
   m_Layer: 15
   m_Name: lightBaking_stonePlate
   m_TagString: Untagged
@@ -1528,6 +1529,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1425999244}
   m_Mesh: {fileID: 4300098, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
+--- !u!114 &1425999250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425999244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597977f0a2dd10446a236f1f07f9071c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lightmapIndex: 0
+  lightmapScaleOffset: {x: 0.11911467, y: 0.11911467, z: 0.56622285, w: -0.0009312111}
+  lightmapPixelOffset: {x: 1159.6244, y: -1.9071203}
+  m_getLightmapValues: 0
+  m_setLightmapValues: 0
+  m_lightmapArray: []
+  m_setLightmapArray: 0
+  pythonCodeSource: "\n    'lightBaking_stonePlate': {\n        'source': (0.1191147,
+    0.5662228, -0.0009312111),\n        'destination': ()\n    },"
+  pythonCodeDestination: 0.1191147, 0.5662228, -0.0009312111
 --- !u!1 &1463074583
 GameObject:
   m_ObjectHideFlags: 0
