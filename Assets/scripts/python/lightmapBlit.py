@@ -70,12 +70,12 @@ lightmapScaleOffsets = {
     },
     'stonePlate': {
         'source': (0.1191147, 0.5662228, -0.0009312111),
-        'destination': (0.1191147, -0.0004260079, 0.5650037)
+        'destination': (0.1191147 / 2, -0.0004260079, 0.5650037)
     },
 }
 
 
-objectsToBlit = ['doorFrame']
+objectsToBlit = ['stonePlate']
 with FloatExr(filename=inFilename) as inImg:
     for gameObject, locations in lightmapScaleOffsets.items():
         if gameObject not in objectsToBlit:

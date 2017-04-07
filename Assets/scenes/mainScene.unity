@@ -1425,7 +1425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100106, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_TagString
-      value: interactable
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 100106, guid: 242f4bc8470b86346ad2e08a098b3df6, type: 3}
       propertyPath: m_Layer
@@ -4796,7 +4796,7 @@ Rigidbody:
   m_Drag: 1
   m_AngularDrag: 0.1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5994,6 +5994,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1d19263c4310e1740abf0673fe6e1b34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d19263c4310e1740abf0673fe6e1b34, type: 3}
   m_IsPrefabParent: 0
@@ -6531,8 +6535,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1.88, z: 0.9}
-  m_Center: {x: 0, y: 0.94, z: 0.15}
+  m_Size: {x: 0.6, y: 1.88, z: 0.8}
+  m_Center: {x: 0, y: 0.94, z: 0.1}
 --- !u!1 &1615329329
 GameObject:
   m_ObjectHideFlags: 0
@@ -6625,10 +6629,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1616350216}
-  m_LocalRotation: {x: -0, y: 0.9813531, z: -0, w: 0.19221364}
-  m_LocalPosition: {x: -6.24, y: 0.95, z: -0.18}
+  m_LocalRotation: {x: -0, y: 0.22123583, z: -0, w: 0.9752203}
+  m_LocalPosition: {x: -10.075, y: 0.107, z: 1.556}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 158.08101, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 25.411001, z: 0}
   m_Children:
   - {fileID: 1612861717}
   - {fileID: 1741037407}

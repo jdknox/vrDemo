@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: jeff knox
-  productName: stencil vrDemo by Jeff Knox
+  productName: vrDemo by Jeff Knox
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
@@ -95,18 +95,21 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: net.knoxar.jeffknox.vrdemo
-  bundleVersion: 0.3.0
+  bundleVersion: 0.4.1
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   xboxOneDisableKinectGpuReservation: 0
   singlePassStereoRendering: 0
   vrSettings:
-    google:
+    cardboard:
       depthFormat: 0
+      enableTransitionView: 0
+    google:
+      depthFormat: 2
       useSustainedPerformanceMode: 1
   vrSplashScreenShouldntTagAlong: 0
   protectGraphicsMemory: 0
-  AndroidBundleVersionCode: 300
+  AndroidBundleVersionCode: 401
   AndroidMinSdkVersion: 24
   AndroidPreferredInstallLocation: 1
   aotOptions: 
